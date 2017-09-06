@@ -1,0 +1,46 @@
+server:
+  port: 8060
+
+
+#数据库、连接池信息
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://119.23.221.234:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: three
+    password: jsd1406
+    driverClassName: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  #thymeleaf模板引擎
+  thymeleaf:
+    #HTML5其实是一个很严格的检查所以这里填写LEGACYHTML5
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+
+
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.three.domain
+  configLocation: classpath:/mybatis-config.xml
+  #  mapperScanPackage:
+
+

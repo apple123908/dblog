@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+    <head >
+        <title>左侧菜单</title>
+        <link rel="stylesheet" href="/assets/adminLTE/css/skins/skin-blue.min.css">
+    </head>
+    <body>
+        <div th:fragment="menu">
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree" id="menus">
+                        <li class="active treeview">
+                            <a href="javascript:;" target="/manage/getDashboard">
+                                <i class="fa fa-dashboard"></i> <span>仪表盘</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="javascript:;" target="/manage/toWriet">
+                                <i class="fa fa-files-o"></i>
+                                <span>发布文章</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" target="/manage/toManageArticle">
+                                <i class="fa fa-th"></i> <span>文章管理</span>
+
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="javascript:;" target="/manage/toFriendshiplinkManage">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>博友链接管理</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="javascript:;">
+                                <i class="fa fa-laptop"></i>
+                                <span>其他管理</span>
+                                <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="javascript:;" target="/manage/toKindIndex"><i class="fa fa-circle-o"></i> 类别/标签</a></li>
+                                <li><a href="javascript:;" target="/manage/bgImages/toManageBgImages"><i class="fa fa-circle-o"></i> 信纸管理</a></li>
+                                <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 评论管理</a></li>
+                            </ul>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+        </div>
+    </body>
+
+</html>

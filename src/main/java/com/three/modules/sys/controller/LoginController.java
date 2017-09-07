@@ -27,6 +27,6 @@ public class LoginController {
     public String toMain(){
 
 
-        return "modules/sys/manage/layout/list";
+        return "modules/sys/manage/home";
     }
 }

@@ -19,4 +19,9 @@ public class LayOutController {
     public String page(){
         return "modules/sys/manage/layout/layout";
     }
+
+    @RequestMapping(value = "/manage/home2")
+    public String ce(){
+        return "modules/sys/home2";
+    }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.three.modules.manage.dao.ArticleMapper">
+
+    <select id="queryAmount" resultType="_int">
+        select count(*) from t_article;
+    </select>
+    <select id="queryLast5Article" resultType="article">
+        select id,title,create_time from t_article order by create_time desc limit 0,5;
+    </select>
+</mapper>

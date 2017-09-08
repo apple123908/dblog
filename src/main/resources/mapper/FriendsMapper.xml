@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.three.modules.manage.dao.FriendsMapper">
+
+    <select id="queryAmount" resultType="_int">
+        select count(*) from t_friends;
+    </select>
+
+    <select id="queryAll" resultType="friends">
+        select * from t_friends
+    </select>
+
+    <select id="verifyFriendInfo" parameterType="friends" resultType="int">
+        select id from t_friends
+          <where>
+              (1=1
+              <if test="name != null and name !=''" >
+                and name =#{name}
+              </if>
+              <if test="url != null and url !=''" >
+                  or url =#{url}
+              </if>
+              )
+              <if test="id != null and id !=''" >
+                  and id !=#{id}
+              </if>
+
+          </where>
+    </select>
+
+    <update id="edit" parameterType="friends">
+        update t_friends
+          <set>
+              <if test="name!=null and name!=''">
+                name=#{name},
+              </if>
+              <if test="url!=null and url!=''">
+                  url=#{url}
+              </if>
+          </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete from t_friends where id=#{id}
+    </delete>
+
+</mapper>

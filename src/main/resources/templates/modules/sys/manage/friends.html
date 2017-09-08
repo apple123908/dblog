@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+<head>
+    <title>导航</title>
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/input.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+</head>
+<body th:fragment="content">
+    <div id="app">
+        <section class="content-header">
+            <h1>
+                博友连接
+                <small>预览页</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 博友连接</a></li>
+                <li class="active">博友连接</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">博友信息</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <template>
+                                <el-table ref="multipleTable" :data="tableList" border tooltip-effect="dark" style="width: 100%" >
+                                    <el-table-column prop="name" label="连接名称" width="400" show-overflow-tooltip ></el-table-column>
+                                    <el-table-column prop="url" label="链接地址" show-overflow-tooltip>
+                                        <template scope="scope">
+                                            <a :href="scope.row.url"   target="_blank">{{scope.row.url}}</a>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column fixed="right" label="操作" width="200">
+                                        <template scope="scope">
+                                            <el-button type="text" size="small" @click="editFriend(scope.$index, scope.row);">编辑</el-button>
+                                            <el-button type="text" size="small" @click="deleteFriend(scope.$index, scope.row);">删除</el-button>
+                                        </template>
+                                    </el-table-column>
+                                </el-table>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">保存博友</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="friendName" v-model="friendName" placeholder="请输入名称">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="friendUrl" v-model="friendUrl" placeholder="请输入链接地址">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" @click="addFriend()">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <el-dialog title="编辑" :visible.sync="dialogFormVisible">
+                    <el-form :model="editForm">
+                        <el-form-item label="名称" :label-width="formLabelWidth">
+                            <el-input v-model="editForm.name" auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="地址" :label-width="formLabelWidth">
+                            <el-input v-model="editForm.url" auto-complete="off"></el-input>
+                        </el-form-item>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="subEdit()">确 定</el-button>
+                    </div>
+                </el-dialog>
+
+                <el-dialog
+                        title="提示"
+                        :visible.sync="deleteDialog"
+                        size="tiny"
+                        :before-close="closeDeleteDialog">
+                    <span>确定删除改记录？</span>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="deleteDialog = false">取 消</el-button>
+                        <el-button type="primary" @click="confirmDelete();">确 定</el-button>
+                    </span>
+                </el-dialog>
+
+            </div>
+        </section>
+    </div>
+</body>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    console.log([[${friends}]]);
+    var v = new Vue({
+        el:'#app',
+        data:{
+            tableList:[[${friends}]],
+            formLabelWidth:'120',
+            dialogFormVisible:false,
+            editForm:{
+                name:'',
+                url:'',
+                id:0
+            },
+            verifyInfo:{},
+            deleteDialog:false,
+            deleteInfo:{},
+            deleteId:0,
+            friendName:'',
+            friendUrl:''
+        },
+        methods:{
+            //提交新博友
+            addFriend: function () {
+                //校验
+                isRepeatEdit(v.friendName,v.friendUrl,null);
+                if(v.verifyInfo.result=='1'){
+                    //提交
+                    this.$http.post(
+                        '/manage/friendShip/add',
+                        {
+                            name: v.friendName,
+                            url: v.friendUrl
+                        }
+                    ).then(
+                        function(response){
+                            if(response.data.result=='1'){
+                                var addInfo={name:v.friendName,url:v.friendUrl,id:response.data.msg};
+                                v.tableList.push(addInfo);
+                                v.friendName='';
+                                v.friendUrl='';
+                            }else{
+                                this.$notify({
+                                    title: '警告',
+                                    message: response.data.msg,
+                                    type: 'warning'
+                                });
+                            }
+                        }
+                    );
+                }else{
+                    //提示警告信息
+                    this.$notify({
+                        title: '警告',
+                        message: v.verifyInfo.msg,
+                        type: 'warning'
+                    });
+                }
+            },
+            //去编辑
+            editFriend:function(index,row){
+                v.editForm.name=row.name;
+                v.editForm.url=row.url;
+                v.dialogFormVisible=true;
+                v.editForm.id=row.id;
+            },
+            //确认删除
+            confirmDelete:function(){
+                this.$http.post(
+                    '/manage/friendShip/delete',
+                    {
+                        id:v.deleteInfo.id,
+                        name: v.deleteInfo.name,
+                        url:v.deleteInfo.url
+                    }
+                ).then(
+                    function(response){
+                        v.deleteDialog=false;
+                        if(response.data.result=='1'){
+                            //删除该元素
+                            v.tableList.splice(v.deleteId,1);
+                        }else{
+                            this.$notify({
+                                title: '警告',
+                                message: response.data.msg,
+                                type: 'warning'
+                            });
+                        }
+                    }
+                )
+            },
+            //关闭删除窗口
+            closeDeleteDialog:function(){
+                v.deleteDialog=false;
+            },
+            deleteFriend:function(index,row){
+                console.log(row);
+                //对话框提示
+                v.deleteInfo=row;
+                v.deleteId=index;
+                v.deleteDialog=true;
+            },
+            //确定修改
+            subEdit:function(){
+                //校验是否重复
+                var verifyResult=isRepeatEdit(v.editForm.name,v.editForm.url,v.editForm.id);
+                //根据校验结果分类处理
+                if(v.verifyInfo.result=='1'){
+                    //提交
+                    editSub();
+                }else{
+                    //提示警告信息
+                    this.$notify({
+                        title: '警告',
+                        message: v.verifyInfo.msg,
+                        type: 'warning'
+                    });
+                }
+            },
+        }
+    });
+
+    /*校验信息是否重复*/
+    function isRepeatEdit(name,url,id){
+        var opData=null;
+        if(id==null){
+            opData={
+                name:name,
+                url:url
+            };
+        }else{
+            opData={
+                name:name,
+                url:url,
+                id:id
+            };
+        }
+        $.ajax(
+            {
+                url:'/manage/friendShip/verify',
+                type:'post',
+                async:false,
+                data:JSON.stringify(opData),
+                contentType: 'application/json',
+                success:function(data){
+                    console.log(data);
+                    v.verifyInfo=data;
+                }
+            }
+        );
+    }
+    //编辑提交
+    function editSub(){
+        v.$http.post(
+            '/manage/friendShip/edit',
+            {
+                name:v.editForm.name,
+                url:v.editForm.url,
+                id:v.editForm.id
+            }
+        ).then(
+            function(response){
+                if(response.data.result=='1'){
+                    //关闭弹框
+                    v.dialogFormVisible=false;
+                    //修改内容
+                    for(var i=0;i< v.tableList.length;i++){
+                        if(v.tableList[0].id== v.editForm.id){
+                            v.tableList[0].name=v.editForm.name;
+                            v.tableList[0].url= v.editForm.url;
+                        }
+                    }
+                }else{
+                    //错误提示
+                    this.$notify({
+                        title: '警告',
+                        message: response.data.msg,
+                        type: 'warning'
+                    });
+                }
+            }
+        );
+    }
+</script>
+</html>

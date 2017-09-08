@@ -1,9 +1,4 @@
-<!DOCTYPE html >fontawesome-webfont.eot
-fontawesome-webfont.svg
-fontawesome-webfont.ttf
-fontawesome-webfont.woff
-fontawesome-webfont.woff2
-FontAwesome.otf
+<!DOCTYPE html >
 <html lang="zh-CN"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
@@ -30,6 +25,16 @@ FontAwesome.otf
           apply the skin class to the body tag so the changes take effect. -->
     <link rel="stylesheet" href="/assets/adminLTE/css/skins/skin-green.min.css">
 
+    <!-- jQuery 3 -->
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/assets/adminLTE/js/adminlte.min.js"></script>
+    <!--vue.js-->
+    <script type="text/javascript" src="/assets/vue/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vue/vue-resource.js"></script>
+
 </head>
 <body class="hold-transition skin-green sidebar-mini">
         <div th:include="modules/sys/manage/layout/nav :: nav">
@@ -42,11 +47,6 @@ FontAwesome.otf
 
         </div>
 
-    <!-- jQuery 3 -->
-    <script src="/assets/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="/assets/adminLTE/js/adminlte.min.js"></script>
+
 </body>
 </html>

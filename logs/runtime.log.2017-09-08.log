@@ -1,0 +1,1318 @@
+2017-09-08 08:58:03.573 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 08:58:08.603 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 8857 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 08:58:08.605 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 08:58:08.924 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a022576: startup date [Fri Sep 08 08:58:08 CST 2017]; root of context hierarchy
+2017-09-08 08:58:10.444 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$66154eab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:10.592 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:10.685 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$dd6bfccd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:10.789 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.024 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$2565a8af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.061 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.065 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.685 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.711 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.728 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$dce495ef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.750 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.752 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.758 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.761 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.762 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 08:58:11.762 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.775 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.793 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.854 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:11.919 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aa1044bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 08:58:12.788 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 08:58:12.816 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 08:58:12.818 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 08:58:13.037 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 08:58:13.037 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4114 ms
+2017-09-08 08:58:13.795 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 08:58:13.798 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 08:58:13.802 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 08:58:13.802 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 08:58:13.803 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 08:58:13.803 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 08:58:13.803 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 08:58:13.803 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 08:58:13.803 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 08:58:15.167 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a022576: startup date [Fri Sep 08 08:58:08 CST 2017]; root of context hierarchy
+2017-09-08 08:58:15.390 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 08:58:15.391 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 08:58:15.391 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 08:58:15.393 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 08:58:15.393 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 08:58:15.396 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 08:58:15.397 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 08:58:15.566 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 08:58:15.566 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 08:58:15.702 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 08:58:17.010 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 08:58:17.011 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 08:58:17.017 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 08:58:17.062 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 08:58:17.071 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 08:58:17.094 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 08:58:17.130 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 08:58:17.139 [main] INFO  com.three.DblogApplication - Started DblogApplication in 24.605 seconds (JVM running for 27.029)
+2017-09-08 08:58:30.621 [http-nio-8060-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-08 08:58:30.621 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-08 08:58:30.658 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 37 ms
+2017-09-08 08:58:30.794 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-09-08 08:58:30.847 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-09-08 08:58:30.847 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-09-08 08:58:30.847 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-09-08 08:58:30.847 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-09-08 08:58:30.850 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: [no caches]
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-09-08 08:58:30.850 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-09-08 08:58:35.173 [http-nio-8060-exec-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017-09-08 08:58:35.289 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:2755 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 08:58:35.289 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 08:58:35.344 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:47 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 08:58:35.344 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 08:58:35.426 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:52 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 08:58:35.427 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 08:58:35.480 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:51 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 08:58:35.480 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 08:58:35.534 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:52 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 08:58:35.534 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 08:58:35.610 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:46 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 08:58:35.611 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 08:59:44.244 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:88 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 08:59:44.244 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 08:59:44.283 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 08:59:44.283 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 08:59:44.321 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 08:59:44.321 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 08:59:44.373 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:46 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 08:59:44.373 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 08:59:45.425 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:48 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 08:59:45.425 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 08:59:45.467 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:41 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 08:59:45.467 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:00:34.185 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:54 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:00:34.185 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:00:34.227 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:42 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:00:34.227 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:02:46.858 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:63 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:02:46.858 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:02:46.890 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:31 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:02:46.890 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:02:53.578 [http-nio-8060-exec-10] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy78.verifyFriendInfo(Unknown Source)
+	at com.three.modules.manage.service.impl.FriendsServiceImpl.verifyFriendInfo(FriendsServiceImpl.java:32)
+	at com.three.modules.manage.controller.FriendsController.verify(FriendsController.java:57)
+	at com.three.modules.manage.controller.FriendsController$$FastClassBySpringCGLIB$$8e223aa4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.three.modules.manage.controller.FriendsController$$EnhancerBySpringCGLIB$$a4540360.verify(<generated>)
+	at sun.reflect.GeneratedMethodAccessor221.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 09:03:44.671 [http-nio-8060-exec-3] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:48)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy78.verifyFriendInfo(Unknown Source)
+	at com.three.modules.manage.service.impl.FriendsServiceImpl.verifyFriendInfo(FriendsServiceImpl.java:32)
+	at com.three.modules.manage.controller.FriendsController.verify(FriendsController.java:57)
+	at com.three.modules.manage.controller.FriendsController$$FastClassBySpringCGLIB$$8e223aa4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.three.modules.manage.controller.FriendsController$$EnhancerBySpringCGLIB$$a4540360.verify(<generated>)
+	at sun.reflect.GeneratedMethodAccessor221.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 09:13:44.989 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3a022576: startup date [Fri Sep 08 08:58:08 CST 2017]; root of context hierarchy
+2017-09-08 09:13:44.997 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:13:44.998 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:13:45.017 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2017-09-08 09:14:10.504 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 09:14:15.540 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 8988 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 09:14:15.541 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 09:14:15.841 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@441cc260: startup date [Fri Sep 08 09:14:15 CST 2017]; root of context hierarchy
+2017-09-08 09:14:17.374 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$1a4dea4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.486 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.564 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$91a4986e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.665 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.894 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$d99e4450] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.931 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:17.935 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.505 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.528 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.546 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$911d3190] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.566 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.568 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.574 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.576 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.577 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 09:14:18.577 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.589 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.605 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.655 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:18.707 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e48e060] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:14:19.528 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 09:14:19.542 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 09:14:19.543 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 09:14:19.686 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 09:14:19.686 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3845 ms
+2017-09-08 09:14:20.451 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 09:14:20.453 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 09:14:20.458 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 09:14:20.459 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 09:14:20.459 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 09:14:20.459 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 09:14:20.459 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 09:14:20.459 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 09:14:20.460 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 09:14:21.911 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@441cc260: startup date [Fri Sep 08 09:14:15 CST 2017]; root of context hierarchy
+2017-09-08 09:14:22.071 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 09:14:22.072 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 09:14:22.073 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 09:14:22.075 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 09:14:22.075 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 09:14:22.077 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 09:14:22.078 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 09:14:22.276 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:14:22.276 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:14:22.360 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:14:23.481 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 09:14:23.483 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 09:14:23.491 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 09:14:23.540 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:14:23.556 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:14:23.578 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 09:14:23.697 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 09:14:23.717 [main] INFO  com.three.DblogApplication - Started DblogApplication in 24.245 seconds (JVM running for 26.473)
+2017-09-08 09:14:41.988 [http-nio-8060-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-08 09:14:41.988 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-08 09:14:42.020 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+2017-09-08 09:14:42.152 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-09-08 09:14:42.209 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-09-08 09:14:42.209 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-09-08 09:14:42.209 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-09-08 09:14:42.210 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-09-08 09:14:42.214 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: [no caches]
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-09-08 09:14:42.214 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-09-08 09:14:46.401 [http-nio-8060-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017-09-08 09:14:46.504 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:2119 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:14:46.504 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:14:46.547 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:36 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:14:46.547 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:14:46.617 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 09:14:46.618 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 09:14:46.655 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:36 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 09:14:46.655 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 09:14:46.700 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:44 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 09:14:46.700 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 09:14:46.770 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:39 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:14:46.770 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 09:14:49.619 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:14:49.619 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:14:49.653 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:34 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:14:49.653 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:14:59.912 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:2964 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:14:59.914 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE name ='测试连接' or url ='http://www.qq.com' and id !=4
+2017-09-08 09:15:19.920 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:47 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:15:19.920 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE name ='测试连接' or url ='http://www.qq.com' and id !=4
+2017-09-08 09:18:06.879 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@441cc260: startup date [Fri Sep 08 09:14:15 CST 2017]; root of context hierarchy
+2017-09-08 09:18:06.889 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:18:06.890 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:18:06.914 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2017-09-08 09:18:34.123 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 09:18:39.166 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 9072 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 09:18:39.167 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 09:18:39.488 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4cbd03e7: startup date [Fri Sep 08 09:18:39 CST 2017]; root of context hierarchy
+2017-09-08 09:18:41.037 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$2a1d7c45] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.159 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.244 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$a1742a67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.346 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.569 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$e96dd649] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.600 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:41.604 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.209 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.232 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$a0ecc389] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.268 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.270 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.276 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.278 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.279 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 09:18:42.279 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.293 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.310 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.372 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:42.438 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e187259] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:18:43.222 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 09:18:43.236 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 09:18:43.237 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 09:18:43.379 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 09:18:43.380 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3892 ms
+2017-09-08 09:18:43.964 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 09:18:43.966 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 09:18:43.970 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 09:18:43.970 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 09:18:43.970 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 09:18:43.970 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 09:18:43.971 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 09:18:43.971 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 09:18:43.971 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 09:18:44.901 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4cbd03e7: startup date [Fri Sep 08 09:18:39 CST 2017]; root of context hierarchy
+2017-09-08 09:18:45.036 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 09:18:45.038 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 09:18:45.038 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 09:18:45.038 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 09:18:45.039 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 09:18:45.041 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 09:18:45.041 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 09:18:45.190 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:18:45.191 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:18:45.287 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:18:46.544 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 09:18:46.546 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 09:18:46.557 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 09:18:46.618 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:18:46.627 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:18:46.652 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 09:18:46.688 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 09:18:46.697 [main] INFO  com.three.DblogApplication - Started DblogApplication in 23.635 seconds (JVM running for 25.875)
+2017-09-08 09:19:18.735 [http-nio-8060-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-08 09:19:18.735 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-08 09:19:18.767 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2017-09-08 09:19:18.890 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-09-08 09:19:18.935 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-09-08 09:19:18.935 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-09-08 09:19:18.935 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-09-08 09:19:18.935 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-09-08 09:19:18.937 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: [no caches]
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-09-08 09:19:18.938 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-09-08 09:19:22.928 [http-nio-8060-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017-09-08 09:19:23.035 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:2323 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:19:23.035 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:19:23.086 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:44 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:19:23.086 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:19:23.158 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:44 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 09:19:23.159 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 09:19:23.200 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 09:19:23.200 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 09:19:23.249 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:48 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 09:19:23.249 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 09:19:23.326 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:45 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:19:23.326 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 09:20:30.336 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:82 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 09:20:30.336 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 09:20:30.377 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 09:20:30.377 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 09:20:30.418 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 09:20:30.418 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 09:20:30.460 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:20:30.461 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 09:20:31.935 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:47 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:20:31.935 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:20:31.975 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:39 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:20:31.975 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:20:35.431 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:72 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:20:35.431 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE name ='测试连接' or url ='http://www.qq.com' and id !=4
+2017-09-08 09:21:26.772 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:41 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:21:26.773 [http-nio-8060-exec-2] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE name ='测试连接' or url ='http://www.qq.com' and id !=4
+2017-09-08 09:23:24.862 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:115 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:23:24.864 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE name ='测试连接' or url ='http://www.qq.com' and id !=4
+2017-09-08 09:29:50.133 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4cbd03e7: startup date [Fri Sep 08 09:18:39 CST 2017]; root of context hierarchy
+2017-09-08 09:29:50.148 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:29:50.148 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:29:50.177 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2017-09-08 09:30:16.380 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 09:30:21.432 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 9183 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 09:30:21.433 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 09:30:21.742 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48c4245d: startup date [Fri Sep 08 09:30:21 CST 2017]; root of context hierarchy
+2017-09-08 09:30:23.345 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$60f9ccff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:23.520 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:23.632 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$d8507b21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:23.731 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.001 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$204a2703] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.042 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.048 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.650 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.672 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.690 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$d7c91443] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.713 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.716 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.722 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.725 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.726 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 09:30:24.726 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.743 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.766 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.825 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:24.894 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4f4c313] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:30:25.669 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 09:30:25.681 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 09:30:25.683 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 09:30:25.835 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 09:30:25.835 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4093 ms
+2017-09-08 09:30:26.441 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 09:30:26.442 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 09:30:26.446 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 09:30:26.447 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 09:30:26.447 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 09:30:26.447 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 09:30:26.447 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 09:30:26.448 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 09:30:26.448 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 09:30:27.452 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48c4245d: startup date [Fri Sep 08 09:30:21 CST 2017]; root of context hierarchy
+2017-09-08 09:30:27.628 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 09:30:27.629 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 09:30:27.630 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 09:30:27.631 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 09:30:27.631 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 09:30:27.633 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 09:30:27.634 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 09:30:27.774 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:30:27.774 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:30:27.864 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:30:29.231 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 09:30:29.232 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 09:30:29.239 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 09:30:29.282 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:30:29.290 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:30:29.314 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 09:30:29.349 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 09:30:29.358 [main] INFO  com.three.DblogApplication - Started DblogApplication in 23.992 seconds (JVM running for 26.51)
+2017-09-08 09:31:02.051 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@48c4245d: startup date [Fri Sep 08 09:30:21 CST 2017]; root of context hierarchy
+2017-09-08 09:31:02.069 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:31:02.069 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:31:27.254 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 09:31:32.295 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 9219 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 09:31:32.296 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 09:31:32.606 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57fae983: startup date [Fri Sep 08 09:31:32 CST 2017]; root of context hierarchy
+2017-09-08 09:31:34.199 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$9e20bda1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.315 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.391 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$15776bc3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.500 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.710 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$5d7117a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.755 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:34.760 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.318 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.345 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.362 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$14f004e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.382 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.384 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.390 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.392 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.394 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 09:31:35.394 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.406 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.426 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.492 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:35.583 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e21bb3b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:31:36.348 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 09:31:36.361 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 09:31:36.362 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 09:31:36.499 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 09:31:36.500 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3894 ms
+2017-09-08 09:31:37.103 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 09:31:37.105 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 09:31:37.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 09:31:37.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 09:31:37.109 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 09:31:37.110 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 09:31:37.110 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 09:31:37.110 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 09:31:37.110 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 09:31:38.071 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57fae983: startup date [Fri Sep 08 09:31:32 CST 2017]; root of context hierarchy
+2017-09-08 09:31:38.267 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 09:31:38.268 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 09:31:38.269 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 09:31:38.270 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 09:31:38.270 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 09:31:38.272 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 09:31:38.273 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 09:31:38.452 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:31:38.452 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:31:38.575 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:31:39.607 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 09:31:39.611 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 09:31:39.619 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 09:31:39.673 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:31:39.685 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:31:39.713 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 09:31:39.755 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 09:31:39.768 [main] INFO  com.three.DblogApplication - Started DblogApplication in 23.575 seconds (JVM running for 26.036)
+2017-09-08 09:31:46.834 [http-nio-8060-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-08 09:31:46.834 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-08 09:31:46.862 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2017-09-08 09:31:46.979 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-09-08 09:31:47.030 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-09-08 09:31:47.030 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-09-08 09:31:47.031 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-09-08 09:31:47.031 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-09-08 09:31:47.033 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: [no caches]
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-09-08 09:31:47.033 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-09-08 09:31:54.057 [http-nio-8060-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017-09-08 09:31:54.164 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:5646 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:31:54.165 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:31:54.208 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:37 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:31:54.208 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:31:54.288 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:48 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 09:31:54.289 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 09:31:54.328 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 09:31:54.328 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 09:31:54.373 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:43 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 09:31:54.373 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 09:31:54.448 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:43 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:31:54.448 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 09:31:57.319 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:31:57.320 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:31:57.355 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:35 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:31:57.355 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:32:02.935 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:349 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:32:02.937 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='测试连接' or url ='http://www.qq.com' ) and id !=4
+2017-09-08 09:32:05.348 [http-nio-8060-exec-2] INFO  o.s.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2017-09-08 09:32:05.443 [http-nio-8060-exec-2] INFO  o.s.jdbc.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2017-09-08 09:32:05.473 [http-nio-8060-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+### SQL: update t_friends            SET name=?                                                 url=?          where id=?
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+; uncategorized SQLException for SQL []; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?] with root cause
+com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:239)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:424)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:147)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:620)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:574)
+	at com.alibaba.druid.wall.WallFilter.check(WallFilter.java:711)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:252)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:928)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:331)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.three.config.mybatis.SqlPrintInterceptor.intercept(SqlPrintInterceptor.java:51)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.GeneratedMethodAccessor214.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy56.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.edit(Unknown Source)
+	at com.three.modules.manage.service.impl.FriendsServiceImpl.edit(FriendsServiceImpl.java:42)
+	at com.three.modules.manage.controller.FriendsController.edit(FriendsController.java:44)
+	at com.three.modules.manage.controller.FriendsController$$FastClassBySpringCGLIB$$8e223aa4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.three.modules.manage.controller.FriendsController$$EnhancerBySpringCGLIB$$d7704909.edit(<generated>)
+	at sun.reflect.GeneratedMethodAccessor213.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 09:32:38.777 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:32:38.777 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='测试连接' or url ='http://www.qq.com' ) and id !=4
+2017-09-08 09:33:07.874 [http-nio-8060-exec-6] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+### SQL: update t_friends            SET name=?                                                 url=?          where id=?
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+; uncategorized SQLException for SQL []; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?] with root cause
+com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:239)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:424)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:147)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:620)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:574)
+	at com.alibaba.druid.wall.WallFilter.check(WallFilter.java:711)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:252)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:928)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:331)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.three.config.mybatis.SqlPrintInterceptor.intercept(SqlPrintInterceptor.java:51)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.GeneratedMethodAccessor214.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy56.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.edit(Unknown Source)
+	at com.three.modules.manage.service.impl.FriendsServiceImpl.edit(FriendsServiceImpl.java:42)
+	at com.three.modules.manage.controller.FriendsController.edit(FriendsController.java:44)
+	at com.three.modules.manage.controller.FriendsController$$FastClassBySpringCGLIB$$8e223aa4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.three.modules.manage.controller.FriendsController$$EnhancerBySpringCGLIB$$d7704909.edit(<generated>)
+	at sun.reflect.GeneratedMethodAccessor213.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 09:34:44.469 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:74 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:34:44.470 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:34:44.506 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:36 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:34:44.506 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:34:51.299 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:34:51.299 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='测试连接' or url ='http://www.qq.com' ) and id !=4
+2017-09-08 09:36:03.388 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:76 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:36:03.388 [http-nio-8060-exec-1] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='dls' or url ='http://www.qq.com' ) and id !=4
+2017-09-08 09:38:09.592 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:87 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:38:09.592 [http-nio-8060-exec-6] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='hls' or url ='http://www.baidu.com' ) and id !=1
+2017-09-08 09:38:14.876 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:51 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:38:14.876 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='hls' or url ='http://www.baidu.com' ) and id !=1
+2017-09-08 09:38:15.364 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:39 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:38:15.364 [http-nio-8060-exec-8] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='hls' or url ='http://www.baidu.com' ) and id !=1
+2017-09-08 09:38:15.525 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:38:15.525 [http-nio-8060-exec-7] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='hls' or url ='http://www.baidu.com' ) and id !=1
+2017-09-08 09:38:23.667 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:38:23.667 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:38:23.706 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:38:23.706 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:38:25.218 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:38:25.218 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:38:25.257 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:38:25.257 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:38:34.230 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:39 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:38:34.230 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='hls' or url ='http://www.baidu.com' ) and id !=1
+2017-09-08 09:39:11.676 [http-nio-8060-exec-8] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+### SQL: update t_friends            SET name=?                                                 url=?          where id=?
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?
+; uncategorized SQLException for SQL []; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url : update t_friends
+           SET name=?
+              
+              
+                  url=? 
+        where id=?] with root cause
+com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'     url=? 
+        where id=?',expect IDENTIFIER, actual IDENTIFIER url
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:239)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:424)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:147)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:620)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:574)
+	at com.alibaba.druid.wall.WallFilter.check(WallFilter.java:711)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:252)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:928)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:448)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:331)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor171.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.three.config.mybatis.SqlPrintInterceptor.intercept(SqlPrintInterceptor.java:51)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy83.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.GeneratedMethodAccessor214.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy56.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.edit(Unknown Source)
+	at com.three.modules.manage.service.impl.FriendsServiceImpl.edit(FriendsServiceImpl.java:42)
+	at com.three.modules.manage.controller.FriendsController.edit(FriendsController.java:44)
+	at com.three.modules.manage.controller.FriendsController$$FastClassBySpringCGLIB$$8e223aa4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.three.modules.manage.controller.FriendsController$$EnhancerBySpringCGLIB$$d7704909.edit(<generated>)
+	at sun.reflect.GeneratedMethodAccessor213.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 09:43:15.082 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57fae983: startup date [Fri Sep 08 09:31:32 CST 2017]; root of context hierarchy
+2017-09-08 09:43:15.096 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:43:15.096 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:43:15.115 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2017-09-08 09:43:43.851 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2017-09-08 09:43:48.897 [main] INFO  com.three.DblogApplication - Starting DblogApplication on sanyedeMacBook-Pro.local with PID 9338 (/Users/three/workspace/idea/dblog/target/classes started by three in /Users/three/workspace/idea/dblog)
+2017-09-08 09:43:48.898 [main] INFO  com.three.DblogApplication - No active profile set, falling back to default profiles: default
+2017-09-08 09:43:49.189 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f08b81: startup date [Fri Sep 08 09:43:49 CST 2017]; root of context hierarchy
+2017-09-08 09:43:50.738 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.three.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$91e8ee2b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:50.860 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:50.936 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.three.config.druid.DruidConfig$$EnhancerBySpringCGLIB$$93f9c4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.039 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.259 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfig' of type [com.three.config.mybatis.MybatisConfig$$EnhancerBySpringCGLIB$$5139482f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.300 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageHelper' of type [com.github.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.305 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlPrintInterceptor' of type [com.three.config.mybatis.SqlPrintInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.898 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.922 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.941 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$8b8356f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.962 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.964 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.970 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.972 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userServiceImpl' of type [com.three.modules.sys.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.973 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2017-09-08 09:43:51.973 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.three.config.shiro.CustomShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:51.995 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:52.014 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'formAuthenticationFilter' of type [com.three.config.shiro.CustomFormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:52.083 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:52.159 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d5e3e43f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-09-08 09:43:52.955 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8060 (http)
+2017-09-08 09:43:52.970 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2017-09-08 09:43:52.971 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-09-08 09:43:53.135 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2017-09-08 09:43:53.136 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3946 ms
+2017-09-08 09:43:53.831 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-08 09:43:53.833 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'com.three.config.druid.DruidStatViewServlet' to [/druid/*]
+2017-09-08 09:43:53.836 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-08 09:43:53.837 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-08 09:43:53.837 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-08 09:43:53.837 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-08 09:43:53.838 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2017-09-08 09:43:53.838 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'shiroFilter' to: [/*]
+2017-09-08 09:43:53.838 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formAuthenticationFilter' to: [/*]
+2017-09-08 09:43:54.832 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f08b81: startup date [Fri Sep 08 09:43:49 CST 2017]; root of context hierarchy
+2017-09-08 09:43:55.040 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/verify]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.verify(com.three.modules.manage.domain.Friends)
+2017-09-08 09:43:55.042 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/toIndex]}" onto public java.lang.String com.three.modules.manage.controller.FriendsController.toFriendsIndex(org.springframework.ui.Model)
+2017-09-08 09:43:55.042 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/friendShip/edit]}" onto public com.three.common.domain.R com.three.modules.manage.controller.FriendsController.edit(com.three.modules.manage.domain.Friends)
+2017-09-08 09:43:55.044 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toLogin]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toLogin()
+2017-09-08 09:43:55.044 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/manage/toMain]}" onto public java.lang.String com.three.modules.sys.controller.LoginController.toMain(org.springframework.ui.Model)
+2017-09-08 09:43:55.049 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-08 09:43:55.050 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-08 09:43:55.219 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:43:55.219 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:43:55.336 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-08 09:43:56.396 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-09-08 09:43:56.399 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-08 09:43:56.407 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-09-08 09:43:56.461 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:43:56.474 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8060"]
+2017-09-08 09:43:56.501 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2017-09-08 09:43:56.543 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8060 (http)
+2017-09-08 09:43:56.555 [main] INFO  com.three.DblogApplication - Started DblogApplication in 23.666 seconds (JVM running for 25.878)
+2017-09-08 09:44:07.222 [http-nio-8060-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-08 09:44:07.222 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-08 09:44:07.251 [http-nio-8060-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 29 ms
+2017-09-08 09:44:07.430 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2017-09-08 09:44:07.495 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2017-09-08 09:44:07.495 [http-nio-8060-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2017-09-08 09:44:07.495 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2017-09-08 09:44:07.496 [http-nio-8060-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2017-09-08 09:44:07.499 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: [no caches]
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2017-09-08 09:44:07.499 [http-nio-8060-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2017-09-08 09:44:10.814 [http-nio-8060-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2017-09-08 09:44:10.912 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:2103 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:44:10.913 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:44:10.954 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:35 ms - id:com.three.modules.sys.dao.UserMapper.findByUsername - Sql:
+2017-09-08 09:44:10.955 [http-nio-8060-exec-3] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_user where username='lixiao'
+2017-09-08 09:44:11.016 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.modules.manage.dao.ArticleMapper.queryAmount - Sql:
+2017-09-08 09:44:11.016 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_article;
+2017-09-08 09:44:11.051 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:33 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAmount - Sql:
+2017-09-08 09:44:11.051 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select count(*) from t_friends;
+2017-09-08 09:44:11.092 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:40 ms - id:com.three.modules.manage.dao.ArticleMapper.queryLast5Article - Sql:
+2017-09-08 09:44:11.092 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    select id,title,create_time from t_article order by create_time desc limit 0,5;
+2017-09-08 09:44:11.158 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:38 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:44:11.158 [http-nio-8060-exec-4] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 仪表盘（主页）','0:0:0:0:0:0:0:1')
+2017-09-08 09:44:13.473 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:36 ms - id:com.three.modules.manage.dao.FriendsMapper.queryAll - Sql:
+2017-09-08 09:44:13.473 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    select * from t_friends
+2017-09-08 09:44:13.507 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:34 ms - id:com.three.common.dao.LogMapper.addLog - Sql:
+2017-09-08 09:44:13.507 [http-nio-8060-exec-5] INFO  com.three.config.mybatis.MybatisConfig -    insert into t_log(operator,action,ip) values('lixiao','访问 博友链接管理','0:0:0:0:0:0:0:1')
+2017-09-08 09:44:16.971 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:60 ms - id:com.three.modules.manage.dao.FriendsMapper.verifyFriendInfo - Sql:
+2017-09-08 09:44:16.971 [http-nio-8060-exec-9] INFO  com.three.config.mybatis.MybatisConfig -    select id from t_friends WHERE (1=1 and name ='测试连接' or url ='http://www.qq.com' ) and id !=4
+2017-09-08 09:44:19.596 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig - 执行sql耗时:117 ms - id:com.three.modules.manage.dao.FriendsMapper.edit - Sql:
+2017-09-08 09:44:19.597 [http-nio-8060-exec-10] INFO  com.three.config.mybatis.MybatisConfig -    update t_friends SET name='测试连接', url='http://www.qq.com' where id=4
+2017-09-08 09:56:34.859 [Thread-20] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47f08b81: startup date [Fri Sep 08 09:43:49 CST 2017]; root of context hierarchy
+2017-09-08 09:56:34.874 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-08 09:56:34.874 [Thread-20] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-08 09:56:34.896 [Thread-20] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

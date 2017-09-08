@@ -5,7 +5,6 @@
       layout:decorator="modules/sys/fragments/manageModel">
     <head >
         <title>左侧菜单</title>
-        <link rel="stylesheet" href="/assets/adminLTE/css/skins/skin-blue.min.css">
     </head>
     <body>
         <div th:fragment="menu">
@@ -35,7 +34,7 @@
                             </a>
                         </li>
                         <li class="treeview">
-                            <a href="javascript:;" target="/manage/toFriendshiplinkManage">
+                            <a href="javascript:;" target="/manage/friendShip/toIndex">
                                 <i class="fa fa-pie-chart"></i>
                                 <span>博友链接管理</span>
                             </a>
@@ -57,8 +56,19 @@
                 </section>
                 <!-- /.sidebar -->
             </aside>
-
+            <script type='text/javascript' th:inline="javascript">
+                $('#menus li').click(function(){//点击li加载界面
+                    var current = $(this),
+                        target = current.find('a').attr('target'); // 找到链接a中的targer的值
+                    if(typeof(target)=='undefined'){
+                        return;
+                    }
+                    window.location.href=target;
+                });
+            </script>
         </div>
+
     </body>
+
 
 </html>

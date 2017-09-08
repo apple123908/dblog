@@ -34,5 +34,13 @@
         <setting name="jdbcTypeForNull" value="NULL" />
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
     </settings>
+    <typeAliases>
+        <typeAlias alias="article" type="com.three.modules.manage.domain.Article"/>
+        <typeAlias alias="type" type="com.three.modules.manage.domain.Type"/>
+        <typeAlias alias="bgImages" type="com.three.modules.manage.domain.BgImages"/>
+        <typeAlias alias="label" type="com.three.modules.manage.domain.Label"/>
+        <typeAlias alias="sysUser" type="com.three.modules.sys.domain.SysUser"/>
+        <typeAlias alias="friends" type="com.three.modules.manage.domain.Friends"/>
+    </typeAliases>
 
 </configuration>

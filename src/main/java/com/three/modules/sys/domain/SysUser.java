@@ -3,6 +3,7 @@ package com.three.modules.sys.domain;
 import java.io.Serializable;
 
 /**
+ * 用户
  * Created by three on 2017/9/4.
  */
 public class SysUser implements Serializable {

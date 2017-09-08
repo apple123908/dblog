@@ -39,7 +39,7 @@ spring:
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
-  typeAliasesPackage: com.three.domain
+  typeAliasesPackage: com.three.*
   configLocation: classpath:/mybatis-config.xml
   #  mapperScanPackage:
 

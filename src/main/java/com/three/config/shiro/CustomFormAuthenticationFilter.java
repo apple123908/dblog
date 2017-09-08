@@ -1,11 +1,18 @@
 package com.three.config.shiro;
 
+import com.three.common.util.Const;
+import com.three.modules.sys.domain.SysUser;
+import com.three.modules.sys.service.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -18,6 +25,9 @@ import java.io.PrintWriter;
 public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
 
     private Logger logger = LoggerFactory.getLogger(CustomFormAuthenticationFilter.class);
+
+    @Autowired
+    UserService userService;
 
     /**
      * 所有请求请求回调
@@ -45,6 +55,11 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.println("{result:true,message:''}");
+        UsernamePasswordToken usernamePasswordToken= (UsernamePasswordToken) token;
+        String username = usernamePasswordToken.getUsername();
+        SysUser user = userService.findByUsername(username);
+        //验证成功后，在session中存储用户的基本信息
+        subject.getSession().setAttribute(Const.CURRENT_USER,user);
         return false;
     }
 

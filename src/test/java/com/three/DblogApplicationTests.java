@@ -11,6 +11,7 @@ public class DblogApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println(11);
 	}
 
 }

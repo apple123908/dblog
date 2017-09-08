@@ -36,8 +36,9 @@ public class FriendsController {
     @RequestMapping(value = "/add")
     @ResponseBody
     public R add(@RequestBody Friends friends){
-        friendsService.add(friends);
-        return null;
+        friendsService.addReturnId(friends);
+        Integer id = friends.getId();
+        return R.ok(id+"");
     }
 
     /**

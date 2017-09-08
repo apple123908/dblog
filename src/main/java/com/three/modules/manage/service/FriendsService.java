@@ -18,5 +18,5 @@ public interface FriendsService {
 
     void deleteById(Integer id);
 
-    void add(Friends friends);
+    void addReturnId(Friends friends);
 }

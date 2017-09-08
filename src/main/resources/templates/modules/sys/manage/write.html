@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+<head>
+    <title>编写</title>
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/input.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+
+</head>
+<body th:fragment="content">
+    <div id="app">
+        <section class="content-header">
+            <h1>
+                发布文章
+                <small>预览页</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 发布文章</a></li>
+                <li class="active">发布文章</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Select2</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                    </div>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>标题*</label>
+                                <input type="email" class="form-control" id="title" placeholder="请输入标题" >
+                            </div>
+                            <div class="form-group">
+                                <label>标签</label>
+                                <select class="form-control select2" multiple="multiple" data-placeholder="请选择标签"
+                                        style="width: 100%;" v-model="labelSelected" id="mult">
+                                    <option v-for="option in allLabel" v-bind:value="option.id">
+                                        {{option.name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>分类</label>
+                                <select class="form-control select2" style="width: 100%;" v-model="typeSelected" >
+                                    <option v-for="option in allType" v-bind:value="option.id">
+                                        {{option.name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <textarea id="editor"></textarea>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' src="/assets/select2/js/select2.full.min.js"></script>
+<script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    console.log([[${label}]]);
+    console.log([[${types}]]);
+
+    $(function () {
+        $('.select2').select2();
+    });
+    var v = new Vue({
+        el:'#app',
+        data:{
+            labelSelected:[],
+            typeSelected:'',
+            allLabel:[[${label}]],
+            allType:[[${types}]]
+        },
+        methods:{
+
+        }
+    });
+
+    //向vue data的多选下拉框（multiple）填充值
+    function getMultipleVal() {
+        $("#mult option:selected").each(function(){
+            v.labelSelected.push($(this).val());
+        });
+    }
+
+    //集成ckeditor 并添加图片上传到服务器功能
+    CKEDITOR.replace('editor',{
+        filebrowserImageUploadUrl: '/manage/ckeditor-upload-image'
+    });
+
+</script>
+</html>

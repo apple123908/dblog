@@ -48,7 +48,7 @@ public class FriendsServiceImpl implements FriendsService {
     }
 
     @Override
-    public void add(Friends friends) {
-        friendsMapper.add(friends);
+    public void addReturnId(Friends friends) {
+        friendsMapper.addReturnId(friends);
     }
 }

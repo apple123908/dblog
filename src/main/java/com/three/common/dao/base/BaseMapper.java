@@ -13,6 +13,9 @@ public interface BaseMapper<T> {
 
     void edit(T t);
 
+    //新增同时返回对象
+    void addReturnId(T t);
+
     void add(T t);
 
     void deleteById(Integer id);

@@ -34,6 +34,13 @@ spring:
     #开发时关闭缓存,不然没法看到实时页面
     cache: false
 
+#qiniu
+qiniu:
+  ak: 79GQ0UQi9Vp1_ZK9IQDHFO9SgxBB10KaPIOrzsIq
+  sk: 1_qVnhmOLsq4zc29lo1gT-gEMGhwPwgNY1eb4hYr
+  content:
+    bucket: appleimage
+  url: http://oswozqu2u.bkt.clouddn.com/
 
 
 

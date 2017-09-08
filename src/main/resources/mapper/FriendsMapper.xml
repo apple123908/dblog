@@ -45,4 +45,15 @@
         delete from t_friends where id=#{id}
     </delete>
 
+    <insert id="add" parameterType="friends" >
+        insert into t_friends(name,url) values(#{name,jdbcType=VARCHAR},#{url,jdbcType=VARCHAR})
+    </insert>
+
+    <!--新增返回记录信息-->
+    <insert id="addReturnId" parameterType="com.three.modules.manage.domain.Friends" useGeneratedKeys="true" keyProperty="id">
+        insert into t_friends(name,url) values(#{name,jdbcType=VARCHAR},#{url,jdbcType=VARCHAR})
+    </insert>
+
+
+
 </mapper>

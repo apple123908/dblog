@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Good Thymes Virtual Grocery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="/assets/selectImage/style.css">
+        <style>
+            .cb{
+                clear:both;
+            }
+            .liImage{
+                position: relative;
+                margin: 10px;
+                width: 157px;
+                height: 157px;
+                float: left;
+            }
+        </style>
+        <link rel="stylesheet" href="/assets/elementUI/theme-default/pagination.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <div id="imagesCheck">
+                <ul  style="width: 710px;">
+                    <li v-for="item in imagesList" @click="checkStyle(item.id)" :id="item.id" class="liImage">
+                        <img :src="item.url" >
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cb">
+
+            </div>
+            <div>
+                <template>
+                    <el-pagination @current-change="handleCurrentChange" :current-page="currentPage"
+                                   :page-size="pageSize" layout="prev, pager, next, jumper" :total="total">
+                    </el-pagination>
+                </template>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/assets/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/vue/vue.min.js"></script>
+    <script type="text/javascript" src="/assets/vue/vue-resource.js"></script>
+    <script type="text/javascript" src="/assets/elementUI/index.js"></script>
+    <script type='text/javascript' th:inline="javascript">
+            var v = new Vue({
+                el:'#app',
+                data:{
+                    imagesList:[],
+                    currentPage:0,
+                    pageSize:0,
+                    total:0
+
+                },
+                methods:{
+                    checkStyle:function(obj){
+                        $('li.selected').removeClass('selected');
+                        var liDom = document.getElementById(obj);
+                        var $liDom=$(liDom);
+
+                        $liDom.attr("class","liImage selected");
+                        parent.setImageValue(obj);//调用父页面方法设置id
+                        //设置父图片
+                        parent.setImage($("#"+obj+" img").attr("src"));
+
+                    },
+
+                    handleCurrentChange:function (val) {
+
+                        getListByPage('create_time desc',val,v.pageSize);
+                    }
+                    
+                }
+            });
+
+
+
+            getListByPage('create_time desc',1,8);
+
+        //获取分页信息
+        function getListByPage(sort,current,size) {
+            v.$http.post('/manage/images/queryBgImagesByPage',
+                {
+                    sort:sort,//按什么排序
+                    currentPage:current,
+                    pageSize:size
+                }).then(
+                function(responese){
+                    v.total=responese.data.total,
+                    v.pageSize=responese.data.pageSize,
+                    v.imagesList=responese.data.list;
+                }
+            );
+        }
+
+    </script>
+</html>

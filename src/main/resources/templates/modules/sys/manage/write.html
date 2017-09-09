@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/switch.css">
 
 </head>
 <body th:fragment="content">
@@ -41,7 +42,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>标题*</label>
-                                <input type="email" class="form-control" id="title" placeholder="请输入标题" >
+                                <input type="text" class="form-control" id="title" placeholder="请输入标题" v-model="title" />
                             </div>
                             <div class="form-group">
                                 <label>标签</label>
@@ -57,11 +58,23 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>分类</label>
-                                <select class="form-control select2" style="width: 100%;" v-model="typeSelected" >
+                                <select class="form-control select2" style="width: 100%;" v-model="typeSelected"
+                                        data-placeholder="请选择类别">
                                     <option v-for="option in allType" v-bind:value="option.id">
                                         {{option.name}}
                                     </option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <a class="btn btn-app" style="margin-left: 0px; margin-right: 10px;" @click="layerBgImage()">
+                                    <span class="badge bg-green">300</span>
+                                    选择信纸
+                                    <i class="fa fa-barcode"></i>
+                                </a>
+                                <a  id="showBG" style="margin-left: 0px;">
+
+                                </a>
+                                <input type="hidden" id="bgImagesSelectedID" />
                             </div>
                         </div>
                     </div>
@@ -73,15 +86,46 @@
                     <textarea id="editor"></textarea>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        是否公开:
+                        <el-switch v-model="isPublic" on-color="#13ce66" off-color="#ff4949">
+                        </el-switch>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        是否开启评论:
+                        <el-switch v-model="isDiscuss" on-color="#13ce66" off-color="#ff4949" :disabled="true">
+                        </el-switch>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="pull-right" style="margin:0px 50px 0px 10px;" >
+                    <el-button :plain="true" type="success" @click="submitArticle();">发布文章</el-button>
+                </div>
+                <div class="pull-right" style="margin:0px 10px;" >
+                    <el-button :plain="true" type="info" :disabled="true" @click="saveDraft();">存为草稿</el-button>
+                </div>
+                <div class="pull-right" style="margin:0px 10px;" >
+                    <el-button :plain="true" type="warning" @click="returnList();">返回列表</el-button>
+                </div>
+            </div>
+
         </section>
+
     </div>
 </body>
 <script type='text/javascript' src="/assets/elementUI/index.js"></script>
 <script type='text/javascript' src="/assets/select2/js/select2.full.min.js"></script>
 <script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
+<script type='text/javascript' src="/assets/layer/layer.js"></script>
 <script type='text/javascript' th:inline="javascript">
-    console.log([[${label}]]);
-    console.log([[${types}]]);
+
 
     $(function () {
         $('.select2').select2();
@@ -92,12 +136,51 @@
             labelSelected:[],
             typeSelected:'',
             allLabel:[[${label}]],
-            allType:[[${types}]]
+            allType:[[${types}]],
+            isPublic:true,
+            isDiscuss:false,
+            title:''
         },
         methods:{
-
+            //显示信纸
+            layerBgImage:function () {
+                layer.open({
+                    type: 2,
+                    title: '信纸',
+                    shadeClose: false,
+                    shade: 0.3,//遮罩层程度
+                    area: ['80%', '90%'],
+                    btn: ['确定', '取消'], //只是为了演示
+                    btn1: function(){
+                        layer.closeAll();
+                    },
+                    btn2: function(){
+                        $("#showBG").html('');
+                        $("#bgImagesSelectedID").val('');
+                    },
+                    content: '/manage/images/showBgImages'    //显示内容
+                });
+            },
+            //发布文章
+            submitArticle:function () {
+                var content = CKEDITOR.instances.editor.getData();
+                var bgValue= $("#bgImagesSelectedID").val();
+                subArticle(true,content,bgValue);//提交，暂不考虑草稿
+            }
         }
     });
+
+    //iframe设置图片信息
+    function setImage(url) {
+        $("#showBG").html('');
+        $("#showBG").html('<img src='+url+' width="78px" height="58px" style="border-radius: 8px;" />');
+    }
+
+    function setImageValue(imageId) {
+        //设置值
+        $("#bgImagesSelectedID").val(imageId);
+        
+    }
 
     //向vue data的多选下拉框（multiple）填充值
     function getMultipleVal() {
@@ -105,11 +188,44 @@
             v.labelSelected.push($(this).val());
         });
     }
+    
+    //提交
+    function subArticle(subType,content,bgId) {
+        var dataOp={
+            title: v.title,
+            content:content,
+            type:{
+                id: v.typeSelected
+            },
+            labels:[{
+                id: v.labelSelected
+            }],
+            status:subType,
+            discuss: v.isDiscuss,
+            publicity: v.isPublic,
+            bgImages:{
+                id:bgId
+            }
+        };
+        if(bgId==null||bgId==''){
+            dataOp.bgImages=null;
+        }
+        v.$http.post(
+            '/manage/article/add',
+            dataOp
+        ).then(
+            function(response){
+                console.log(response);
+            }
+        );
+    }
 
     //集成ckeditor 并添加图片上传到服务器功能
     CKEDITOR.replace('editor',{
-        filebrowserImageUploadUrl: '/manage/ckeditor-upload-image'
+        filebrowserImageUploadUrl: '/manage/images/ckeditor-upload-image'
     });
+    
+    
 
 </script>
 </html>

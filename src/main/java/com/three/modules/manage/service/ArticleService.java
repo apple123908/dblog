@@ -14,4 +14,6 @@ public interface ArticleService {
 
     //最近5篇
     List<Article> queryLast5Article();
+
+    void add(Article article);
 }

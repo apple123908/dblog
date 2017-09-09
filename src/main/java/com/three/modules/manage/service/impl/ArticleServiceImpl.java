@@ -5,6 +5,7 @@ import com.three.modules.manage.domain.Article;
 import com.three.modules.manage.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,5 +27,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> queryLast5Article() {
         return articleMapper.queryLast5Article();
+    }
+
+
+    @Transactional
+    @Override
+    public void add(Article article) {
+        //新增文章
+        //类别
+        //标签
     }
 }

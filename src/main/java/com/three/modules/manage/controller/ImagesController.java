@@ -1,12 +1,18 @@
 package com.three.modules.manage.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.three.common.domain.base.Page;
 import com.three.common.exception.CustomException;
+import com.three.common.util.JsonUtil;
+import com.three.modules.manage.domain.BgImages;
+import com.three.modules.manage.service.ImagesService;
 import com.three.modules.manage.utils.ImagesUtil;
 import com.three.modules.manage.utils.QiNiu;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,6 +32,34 @@ public class ImagesController {
 
     @Autowired
     QiNiu qiNiu;
+
+
+    @Autowired
+    ImagesService imagesService;
+
+
+    /**
+     * 去layer现实信纸页面
+     * @return
+     */
+    @RequestMapping(value = "/showBgImages")
+    public String showBgImages(){
+
+        return "modules/sys/manage/showBgImages";
+    }
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @RequestMapping(value = "/queryBgImagesByPage")
+    @ResponseBody
+    public String queryBgImagesByPage(@RequestBody Page<BgImages> page){
+        PageInfo<BgImages> bgImagesPageInfo = imagesService.queryByPage(page);
+        String cunrrentList = JsonUtil.object2String(bgImagesPageInfo);
+        return cunrrentList;
+    }
 
     /**
      * 富文本编辑器上传文件

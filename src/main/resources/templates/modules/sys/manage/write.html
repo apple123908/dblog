@@ -29,7 +29,7 @@
         <section class="content">
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Select2</h3>
+                    <h3 class="box-title">编写文章</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label>标签</label>
                                 <select class="form-control select2" multiple="multiple" data-placeholder="请选择标签"
-                                        style="width: 100%;" v-model="labelSelected" id="mult">
+                                        style="width: 100%;"  id="mult">
                                     <option v-for="option in allLabel" v-bind:value="option.id">
                                         {{option.name}}
                                     </option>
@@ -59,7 +59,7 @@
                             <div class="form-group">
                                 <label>分类</label>
                                 <select class="form-control select2" style="width: 100%;" v-model="typeSelected"
-                                        data-placeholder="请选择类别">
+                                        data-placeholder="请选择类别" id="typeSelected">
                                     <option v-for="option in allType" v-bind:value="option.id">
                                         {{option.name}}
                                     </option>
@@ -125,7 +125,7 @@
 <script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
 <script type='text/javascript' src="/assets/layer/layer.js"></script>
 <script type='text/javascript' th:inline="javascript">
-
+    console.log([[${types}]]);
 
     $(function () {
         $('.select2').select2();
@@ -182,13 +182,7 @@
         
     }
 
-    //向vue data的多选下拉框（multiple）填充值
-    function getMultipleVal() {
-        $("#mult option:selected").each(function(){
-            v.labelSelected.push($(this).val());
-        });
-    }
-    
+
     //提交
     function subArticle(subType,content,bgId) {
         var dataOp={
@@ -197,9 +191,6 @@
             type:{
                 id: v.typeSelected
             },
-            labels:[{
-                id: v.labelSelected
-            }],
             status:subType,
             discuss: v.isDiscuss,
             publicity: v.isPublic,
@@ -210,6 +201,19 @@
         if(bgId==null||bgId==''){
             dataOp.bgImages=null;
         }
+
+        //对2个下拉框设置参数
+        var array=[];
+        $("#mult option:selected").each(function(){
+            console.log($(this).val());
+            var objLabel={id:$(this).val()};
+            array.push(objLabel);
+        });
+        dataOp.labels=array;
+        v.typeSelected=$("#typeSelected option:selected").val();
+
+        console.log(dataOp);
+
         v.$http.post(
             '/manage/article/add',
             dataOp

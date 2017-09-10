@@ -1,5 +1,7 @@
 package com.three.modules.manage.service;
 
+import com.github.pagehelper.PageInfo;
+import com.three.common.domain.base.Page;
 import com.three.modules.manage.domain.Article;
 
 import java.util.List;
@@ -16,4 +18,7 @@ public interface ArticleService {
     List<Article> queryLast5Article();
 
     void add(Article article);
+
+    //分页查询
+    PageInfo<Article> queryByPage(Page<Article> articlePage);
 }

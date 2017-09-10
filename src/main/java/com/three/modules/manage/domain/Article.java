@@ -3,6 +3,8 @@ package com.three.modules.manage.domain;
 import com.three.modules.sys.domain.SysUser;
 
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -130,4 +132,6 @@ public class Article {
     public void setBgImages(BgImages bgImages) {
         this.bgImages = bgImages;
     }
+
+
 }

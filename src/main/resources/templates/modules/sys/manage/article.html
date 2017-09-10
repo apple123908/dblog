@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+<head>
+    <title>文章管理</title>
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+</head>
+<body th:fragment="content">
+    <div id="app">
+        <section class="content-header">
+            <h1>
+                文章管理
+                <small>预览页</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 文章管理</a></li>
+                <li class="active">文章管理</li>
+            </ol>
+        </section>
+
+    </div>
+</body>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    var v = new Vue({
+        el:'#app',
+        data:{
+
+        },
+        methods:{
+
+        }
+    });
+
+
+</script>
+</html>

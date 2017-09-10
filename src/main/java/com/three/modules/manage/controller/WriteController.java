@@ -1,5 +1,6 @@
 package com.three.modules.manage.controller;
 
+import com.three.common.annotation.LogAction;
 import com.three.modules.manage.domain.Label;
 import com.three.modules.manage.domain.Type;
 import com.three.modules.manage.service.LabelService;
@@ -29,6 +30,7 @@ public class WriteController {
      * @return
      */
     @RequestMapping(value = "/toWrite")
+    @LogAction(name="访问 发布文章 页面")
     public String toWrite(Model model){
         //查询所有的类别和标签（select）
         List<Type> types=typeService.queryAll();

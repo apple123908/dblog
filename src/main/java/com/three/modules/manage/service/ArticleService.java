@@ -21,4 +21,6 @@ public interface ArticleService {
 
     //分页查询
     PageInfo<Article> queryByPage(Page<Article> articlePage);
+
+    Article queryById(int articleId);
 }

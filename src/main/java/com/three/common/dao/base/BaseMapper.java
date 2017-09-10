@@ -1,5 +1,6 @@
 package com.three.common.dao.base;
 
+import com.three.modules.manage.domain.Article;
 import com.three.modules.manage.domain.Friends;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -24,4 +25,6 @@ public interface BaseMapper<T> {
 
     //查询总记录数
     int queryAmount();
+
+    T queryById(int id);
 }

@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.three.modules.manage.dao.ArticleMapper">
+    <resultMap id="articleTypeBean" type="com.three.modules.manage.domain.Article" >
+        <id column="id" property="id"/>
+        <result column="browse_count" property="browseCount"/>
+        <result column="content" property="content"/>
+        <result column="title" property="title"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <association property="type" javaType="com.three.modules.manage.domain.Type">
+            <id column="tId" property="id"/>
+            <result column="tName" property="name" />
+        </association>
+    </resultMap>
 
+    <resultMap id="articleEditBean" type="com.three.modules.manage.domain.Article" >
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="title" property="title"/>
+        <result column="is_publicity" property="isPublicity"/>
+        <result column="is_discuss" property="isDiscuss"/>
+        <association property="type" javaType="com.three.modules.manage.domain.Type">
+            <id column="tId" property="id"/>
+        </association>
+        <association property="bgImages" javaType="com.three.modules.manage.domain.BgImages">
+            <id column="bId" property="id" />
+            <result column="bUrl" property="url" />
+        </association>
+        <collection property="labels" ofType="com.three.modules.manage.domain.Label">
+            <id column="lId" property="id" />
+        </collection>
+
+    </resultMap>
 
 
     <select id="queryAmount" resultType="_int">
@@ -41,6 +71,26 @@
             t.name as tName
         from t_article a
             inner join t_type t on a.type_id=t.id
+    </select>
+    
+    <select id="queryById" resultMap="articleEditBean" parameterType="java.lang.Integer">
+        select
+            a.id,
+            a.title,
+            a.content,
+            a.is_discuss,
+            a.is_publicity,
+            t.id as tId,
+            l.id as lID,
+            b.id as bID,
+            b.url as bUrl
+        from t_article a
+            inner join t_user u on a.author_id=u.id
+            left join t_bgimages b on a.bg_images_id=b.id
+            inner join t_type t on a.type_id=t.id
+            left join t_article_label al on a.id=al.article_id
+            left join t_label l on al.label_id=l.id
+        where a.id=#{articleId}
     </select>
 
 </mapper>

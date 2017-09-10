@@ -70,4 +70,9 @@ public class ArticleServiceImpl implements ArticleService {
         articleMapper.queryAll();
         return myPage.toPageInfo();
     }
+
+    @Override
+    public Article queryById(int articleId) {
+        return articleMapper.queryById(articleId);
+    }
 }

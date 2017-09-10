@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/pagination.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
 </head>
 <body th:fragment="content">
     <div id="app">
@@ -21,6 +24,47 @@
                 <li class="active">文章管理</li>
             </ol>
         </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <template>
+                        <el-table ref="multipleTable" :data="tableList" border tooltip-effect="dark" style="width: 100%" >
+                            <el-table-column prop="title" label="标题" show-overflow-tooltip ></el-table-column>
+                            <el-table-column prop="createTime" label="发布日期" width="200"></el-table-column>
+                            <el-table-column prop="browseCount" label="浏览量" width="100"></el-table-column>
+                            <el-table-column prop="type.name" label="类别" width="100">
+                            </el-table-column>
+                            <el-table-column prop="status" label="状态" width="100">
+                                <template scope="scope">
+                                    <span v-show="scope.row.status">已发布</span>
+                                    <span v-show="!scope.row.status">草稿</span>
+                                </template>
+                            </el-table-column>
+                            <el-table-column fixed="right" label="操作" width="200">
+                                <template scope="scope">
+                                    <el-button type="text" size="small"  :disabled="true" @click="">预览</el-button>
+                                    <el-button type="text" size="small"  @click="editArticle(scope.$index, scope.row);">编辑</el-button>
+                                    <el-button type="text" size="small" @click="deleteArticle(scope.$index, scope.row);">删除</el-button>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+
+                    </template>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-12">
+                    <template>
+                        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage"
+                                       :page-sizes="[10, 20, 50, 100]"
+                                       :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="total">
+                        </el-pagination>
+                    </template>
+                </div>
+            </div>
+
+        </section>
 
     </div>
 </body>
@@ -28,15 +72,55 @@
 <script type='text/javascript' src="/assets/elementUI/index.js"></script>
 <script type='text/javascript' src="/assets/elementUI/index.js"></script>
 <script type='text/javascript' th:inline="javascript">
+
+
     var v = new Vue({
         el:'#app',
         data:{
+            tableList:'',
+            currentPage:0,
+            pageSize:0,
+            total:0
 
         },
         methods:{
-
+            editArticle:function (index,info) {
+                window.location.href="/manage/article/toEditArticle/"+info.id;
+            },
+            deleteArticle:function () {
+                
+            },
+            handleSizeChange:function (val) {
+                getListByPage("create_time desc",1,val);
+            },
+            handleCurrentChange:function (val) {
+                getListByPage("create_time desc",val,v.pageSize);
+            }
+            
         }
     });
+    getListByPage("create_time desc",1,10);
+
+    function getListByPage(sort,currentPage,pageSize) {
+        //分页获取数据
+        v.$http.post(
+            '/manage/article/queryByPage',
+            {
+                currentPage:currentPage,
+                pageSize:pageSize,
+                sort:sort
+            }
+        ).then(
+            function (response) {
+                console.log(response);
+                v.tableList=response.data.list;
+                v.currentPage=response.data.pageNum;
+                v.pageSize=response.data.pageSize;
+                v.total=response.data.total;
+
+            }
+        )
+    }
 
 
 </script>

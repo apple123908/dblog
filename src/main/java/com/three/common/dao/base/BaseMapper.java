@@ -2,6 +2,7 @@ package com.three.common.dao.base;
 
 import com.three.modules.manage.domain.Article;
 import com.three.modules.manage.domain.Friends;
+import com.three.modules.manage.domain.Type;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface BaseMapper<T> {
     int queryAmount();
 
     T queryById(int id);
+
+    void update(T t);
 }

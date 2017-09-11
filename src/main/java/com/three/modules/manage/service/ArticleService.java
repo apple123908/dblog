@@ -23,4 +23,6 @@ public interface ArticleService {
     PageInfo<Article> queryByPage(Page<Article> articlePage);
 
     Article queryById(int articleId);
+
+    void edit(Article article);
 }

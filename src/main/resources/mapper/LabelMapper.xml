@@ -5,4 +5,18 @@
     <select id="queryAll" resultType="label">
         select * from t_label
     </select>
+
+    <select id="queryArticleOfLabelAmount" resultType="java.util.Map">
+        select count(*) as amount,lj.* from(
+            select l.*,al.article_id as aId from t_label l left join t_article_label al on l.id=al.label_id
+        )lj group by lj.id
+    </select>
+
+    <delete id="deleteById" parameterType="integer">
+        delete from t_label where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="label">
+        update t_label set name=#{name} where id =#{id}
+    </update>
 </mapper>

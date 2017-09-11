@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+<head>
+    <title>类别/标签</title>
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/input.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+</head>
+<body th:fragment="content">
+    <div id="app">
+        <section class="content-header">
+            <h1>
+                分类/标签管理
+                <small>预览页</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 分类/标签管理</a></li>
+                <li class="active">分类/标签管理</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">类别列表</h3>
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label">类别名称</label>
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control select2" style="width: 100%;" v-model="typeSelected" @change="typeChange(typeSelected);">
+                                            <option v-for="option in allType" v-bind:value="option">
+                                                {{option.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label">引用数量</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="vx" disabled="disabled" :value="typeAmount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-info pull-right" @click="typeEdit()">编辑</button>
+                                <button type="button" class="btn btn-default" @click="typeDelete()">删除</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">标签列表</h3>
+                        </div>
+
+                        <form class="form-horizontal">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label">标签名称</label>
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control select2" style="width: 100%;" v-model="labelSelected" @change="lebelChange(labelSelected);">
+                                            <option v-for="option in allLabel" v-bind:value="option">
+                                                {{option.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label">引用数量</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="f" disabled="disabled" :value="labelAmount">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-info pull-right" @click="labelEdit()">编辑</button>
+                                <button type="button" class="btn btn-default" @click="labelDelete()">删除</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">新增类别</h3>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="请输入类型名称" v-model="typeName">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" @click="submitType();">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <el-dialog title="类型编辑" :visible.sync="typeEditDialog" size="tiny" >
+                <el-form :model="typeForm">
+                    <el-form-item label="下拉名称" :label-width="formWidth">
+                        <el-input v-model="typeForm.editTName" auto-complete="off"></el-input>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button @click="typeEditDialog = false">取 消</el-button>
+                    <el-button type="primary" @click="editTypeSub();">确 定</el-button>
+                </div>
+            </el-dialog>
+
+            <el-dialog title="标签编辑" :visible.sync="labelEditDialog" size="tiny" >
+                <el-form :model="labelForm">
+                    <el-form-item label="下拉名称" :label-width="formWidth">
+                        <el-input v-model="labelForm.labelName" auto-complete="off"></el-input>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button @click="labelEditDialog = false">取 消</el-button>
+                    <el-button type="primary" @click="editLabelSub();">确 定</el-button>
+                </div>
+            </el-dialog>
+
+
+        </section>
+    </div>
+</body>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    console.log([[${listType}]]);
+    console.log([[${listLabel}]]);
+    var v = new Vue({
+        el:'#app',
+        data:{
+            allType:[[${listType}]],
+            typeSelected:[[${listType[0]}]],
+            typeAmount:[[${listType[0].amount}]],
+
+            allLabel:[[${listLabel}]],
+            labelSelected:[[${listLabel[0]}]],
+            labelAmount:[[${listLabel[0].amount}]],
+
+            typeEditDialog:false,
+            formWidth:'100',
+            typeForm:{
+                editTName:'',
+                id:0
+            },
+
+            labelEditDialog:false,
+            labelForm:{
+                labelName:'',
+                id:0
+            },
+
+            typeName:'',
+
+
+        },
+        methods:{
+            editTypeSub:function () {
+                //校验后和之前一样
+                if(v.typeSelected.name!=v.typeForm.editTName){
+                    //直接编辑
+                    this.$http.post(
+                        '/manage/kind/updateType',
+                        {
+                            id:v.typeForm.id,
+                            name:v.typeForm.editTName
+                        }
+                    ).then(
+                        function (response) {
+                            if(response.data.result==1){
+                                //修改数组
+                                v.typeSelected.name=v.typeForm.editTName;
+                                //修改当前显示的
+                                for(var i=0;i<v.allType;i++){
+                                    if(v.allType[i].id== v.typeForm.id){
+                                        v.allType[i].name=v.typeForm.editTName;
+                                        break;
+                                    }
+                                }
+                                v.typeEditDialog=false;
+                            }
+
+                        }
+                    );
+
+                }else {
+                    v.typeEditDialog=false;
+                }
+            },
+            typeEdit:function () {
+                //打开dialog
+                this.typeEditDialog=true;
+                //赋值
+                this.typeForm.editTName=this.typeSelected.name;
+                this.typeForm.id=this.typeSelected.id;
+                console.log(this.typeForm.id);
+            } ,
+            typeDelete:function () {
+                if(v.typeSelected.amount==0){
+                    //删除选中类型
+                    this.$http.post(
+                        '/manage/kind/deleteTypeById',
+                        {
+                            id:v.typeSelected.id
+                        }
+                    ).then(
+                        function (response) {
+                            if(response.data.result==1){
+                                //前端删除
+                                removeObj(this.allType,this.typeSelected.id)
+                                //填上初始值
+                                var defaultVal=this.allType[0];
+                                if(defaultVal!=null){
+                                    this.typeSelected=defaultVal;
+                                    this.typeAmount=defaultVal.amount;
+                                }
+                            }
+                        }
+                    );
+                }else{
+                    this.$notify({
+                        title: '警告',
+                        message: '存在引用不予删除',
+                        type: 'warning'
+                    });
+                }
+            } ,
+            typeChange:function (data) {
+                this.typeAmount=data.amount;
+            } ,
+            labelEdit:function () {
+                this.labelEditDialog=true;
+                this.labelForm.labelName=this.labelSelected.name;
+                this.labelForm.id=this.labelSelected.id;
+            } ,
+            labelDelete:function () {
+                if(v.labelSelected.amount==0){
+                    //删除选中类型
+                    this.$http.post(
+                        '/manage/kind/deleteLabelById',
+                        {
+                            id:v.labelSelected.id
+                        }
+                    ).then(
+                        function (response) {
+                            if(response.data.result==1){
+                                //前端删除
+                                removeObj(this.allLabel,this.labelSelected.id)
+                                //填上初始值
+                                var defaultVal=this.allLabel[0];
+                                if(defaultVal!=null){
+                                    this.labelSelected=defaultVal;
+                                    this.labelAmount=defaultVal.amount;
+                                }
+                            }
+                        }
+                    );
+                }else{
+                    this.$notify({
+                        title: '警告',
+                        message: '存在引用不予删除',
+                        type: 'warning'
+                    });
+                }
+
+            } ,
+            lebelChange:function (data) {
+                v.labelAmount=data.amount;
+            },
+            editLabelSub:function () {
+                //校验后和之前一样
+                if(v.labelSelected.name!=v.labelForm.labelName){
+                    //直接编辑
+                    this.$http.post(
+                        '/manage/kind/updateLabel',
+                        {
+                            id:v.labelForm.id,
+                            name:v.labelForm.labelName
+                        }
+                    ).then(
+                        function (response) {
+                            if(response.data.result==1){
+                                //修改数组
+                                v.labelSelected.name=v.labelForm.labelName;
+                                //修改当前显示的
+                                for(var i=0;i<v.allLabel;i++){
+                                    if(v.allLabel[i].id== v.labelForm.id){
+                                        v.allLabel[i].name=v.labelForm.labelName;
+                                        break;
+                                    }
+                                }
+                                v.labelEditDialog=false;
+                            }
+
+                        }
+                    );
+
+                }else {
+                    v.labelEditDialog=false;
+                }
+            },
+            submitType:function () {
+                this.$http.post(
+                    '/manage/kind/addType',
+                    {
+                        name:v.typeName
+                    }
+                ).then(
+                    function (response) {
+                        if(response.data.result==1){
+                            var insertInfo={id:response.data.msg,name:v.typeName,amouont:0};
+                            v.typeName='';
+                            //存入
+                            v.allType.push(insertInfo);
+                            console.log(v.allType);
+                        }
+                    }
+                );
+            }
+            
+
+        }
+    });
+
+
+
+    //根据数组中的id属性删除对应的元素
+    function removeObj(arr, val) {
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i].id == val) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+    }
+    
+    console.log(v.allType);
+</script>
+</html>

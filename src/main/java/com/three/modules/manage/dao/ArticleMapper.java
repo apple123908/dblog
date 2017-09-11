@@ -19,4 +19,7 @@ public interface ArticleMapper extends BaseMapper<Article>{
 
     //article_label中间表添加数据
     void addMiddle(List<Map<String, Object>> list);
+
+
+    void deleteMiddle(Integer id);
 }

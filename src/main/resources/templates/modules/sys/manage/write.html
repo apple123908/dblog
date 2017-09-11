@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label>标签</label>
                                 <select class="form-control select2" multiple="multiple" data-placeholder="请选择标签"
-                                        style="width: 100%;"  id="mult">
+                                        style="width: 100%;"  id="mult" >
                                     <option v-for="option in allLabel" v-bind:value="option.id">
                                         {{option.name}}
                                     </option>
@@ -125,7 +125,6 @@
 <script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
 <script type='text/javascript' src="/assets/layer/layer.js"></script>
 <script type='text/javascript' th:inline="javascript">
-    console.log([[${types}]]);
 
     $(function () {
         $('.select2').select2();
@@ -133,7 +132,7 @@
     var v = new Vue({
         el:'#app',
         data:{
-            labelSelected:[],
+            labelSelected:'',
             typeSelected:'',
             allLabel:[[${label}]],
             allType:[[${types}]],
@@ -163,6 +162,7 @@
             },
             //发布文章
             submitArticle:function () {
+
                 var content = CKEDITOR.instances.editor.getData();
                 var bgValue= $("#bgImagesSelectedID").val();
                 subArticle(true,content,bgValue);//提交，暂不考虑草稿
@@ -205,14 +205,12 @@
         //对2个下拉框设置参数
         var array=[];
         $("#mult option:selected").each(function(){
-            console.log($(this).val());
             var objLabel={id:$(this).val()};
             array.push(objLabel);
         });
         dataOp.labels=array;
         v.typeSelected=$("#typeSelected option:selected").val();
-
-        console.log(dataOp);
+        dataOp.type.id=v.typeSelected;
 
         v.$http.post(
             '/manage/article/add',
@@ -220,6 +218,7 @@
         ).then(
             function(response){
                 console.log(response);
+                alert("编写完成后续处理！");
             }
         );
     }

@@ -82,4 +82,11 @@ public class ArticleController {
         return "modules/sys/manage/toEditArticle";
     }
 
+    @RequestMapping(value = "/edit")
+    @ResponseBody
+    public String editArticle(@RequestBody Article article){
+        articleService.edit(article);
+        return null;
+    }
+
 }

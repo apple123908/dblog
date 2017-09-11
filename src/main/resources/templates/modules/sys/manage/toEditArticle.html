@@ -127,8 +127,7 @@
 <script type='text/javascript' src="/assets/layer/layer.js"></script>
 <script type='text/javascript' th:inline="javascript">
     console.log([[${article}]]);
-    console.log([[${label}]]);
-    console.log([[${types}]]);
+
 
     $(function () {
         $('.select2').select2();
@@ -136,8 +135,9 @@
     var v = new Vue({
         el:'#app',
         data:{
-            labelSelected:[1,4],
-            typeSelected:1,
+            id:[[${article.id}]],
+            labelSelected:'',
+            typeSelected:[[${article.type.id}]],
             allLabel:[[${label}]],
             allType:[[${types}]],
             isPublic:[[${article.publicity}]],
@@ -189,12 +189,10 @@
 
         //多选
         var selLabelArr=[[${article.labels}]];
-        console.log(selLabelArr);
         var need=[];
         for(var i=0;i<selLabelArr.length;i++){
             need.push(selLabelArr[i].id);
         }
-        console.log(need);
         v.labelSelected=need;
     }
 
@@ -215,11 +213,13 @@
     //提交
     function subArticle(subType,content,bgId) {
         var dataOp={
+            id: v.id,
             title: v.title,
             content:content,
             type:{
                 id: v.typeSelected
             },
+            labels:v.typeSelected,
             status:subType,
             discuss: v.isDiscuss,
             publicity: v.isPublic,
@@ -234,21 +234,22 @@
         //对2个下拉框设置参数
         var array=[];
         $("#mult option:selected").each(function(){
-            console.log($(this).val());
             var objLabel={id:$(this).val()};
             array.push(objLabel);
         });
         dataOp.labels=array;
         v.typeSelected=$("#typeSelected option:selected").val();
-
+        dataOp.type.id=v.typeSelected;
+        console.log(v.labelSelected);
         console.log(dataOp);
-
+        //提交修正
         v.$http.post(
-            '/manage/article/add',
+            '/manage/article/edit',
             dataOp
         ).then(
             function(response){
                 console.log(response);
+                alert("编写完成后续处理！");
             }
         );
     }

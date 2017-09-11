@@ -5,5 +5,22 @@
         select * from t_type
     </select>
 
+    <select id="queryArticleOfTypeAmount" resultType="java.util.Map">
+        select count(*) as amount,lj.id,lj.name,lj.aId from(
+            select t.id,t.name,a.id as aId from t_type t left join t_article a on t.id=a.type_id
+        )lj GROUP BY lj.id
+    </select>
+
+    <delete id="deleteById" parameterType="integer">
+        delete from t_type where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="type">
+        update t_type set name = #{name} where id=#{id}
+    </update>
+
+    <insert id="addReturnId" parameterType="com.three.modules.manage.domain.Type" useGeneratedKeys="true" keyProperty="id">
+        insert into t_type(name) values(#{name})
+    </insert>
 
 </mapper>

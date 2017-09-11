@@ -18,4 +18,6 @@ public interface LabelService {
     void deleteById(Integer id);
 
     void update(Label label);
+
+    void addReturnId(Label label);
 }

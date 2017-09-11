@@ -19,4 +19,8 @@
     <update id="update" parameterType="label">
         update t_label set name=#{name} where id =#{id}
     </update>
+
+    <insert id="addReturnId" parameterType="label" useGeneratedKeys="true" keyProperty="id">
+        insert into t_label(name) values(#{name})
+    </insert>
 </mapper>

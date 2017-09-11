@@ -91,7 +91,7 @@ public class KindController {
     }
 
     /**
-     * 新增
+     * 新增type
      * @param type
      * @return
      */
@@ -103,4 +103,11 @@ public class KindController {
         return R.ok(id+"");
     }
 
+    @RequestMapping(value = "/addLabel")
+    @ResponseBody
+    public R addLabel(@RequestBody Label label){
+        labelService.addReturnId(label);
+        Integer id = label.getId();
+        return R.ok(id+"");
+    }
 }

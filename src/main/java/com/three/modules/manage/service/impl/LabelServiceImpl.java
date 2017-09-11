@@ -43,4 +43,9 @@ public class LabelServiceImpl implements LabelService {
     public void update(Label label) {
         labelMapper.update(label);
     }
+
+    @Override
+    public void addReturnId(Label label) {
+        labelMapper.addReturnId(label);
+    }
 }

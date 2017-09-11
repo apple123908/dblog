@@ -1,6 +1,7 @@
 package com.three.modules.manage.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.three.common.annotation.LogAction;
 import com.three.common.domain.base.Page;
 import com.three.common.exception.CustomException;
 import com.three.common.util.JsonUtil;
@@ -49,6 +50,17 @@ public class ImagesController {
     }
 
     /**
+     * 去信纸管理
+     * @return
+     */
+    @RequestMapping(value = "/toBgImagesIndex")
+    @LogAction(name="访问 信纸管理")
+    public String toBgImagesIndex(){
+
+        return "modules/sys/manage/images";
+    }
+
+    /**
      * 分页查询
      * @param page
      * @return
@@ -93,4 +105,9 @@ public class ImagesController {
 
         return String.format("<script>window.parent.CKEDITOR.tools.callFunction(%s, '%s')</script>", funcNumber, returnImageURL);
     }
+
+
+
+
+
 }

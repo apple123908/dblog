@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="modules/sys/fragments/manageModel">
+<head>
+    <title>导航</title>
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/input.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/dialog.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/pagination.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/upload.css">
+    <style type="text/css">
+        .fr {
+            float: right;
+            margin-right: 50px;
+        }
+        .fl {
+            float: left;
+        }
+    </style>
+</head>
+<body th:fragment="content">
+    <div id="app">
+        <section class="content-header">
+            <h1>
+                信纸管理
+                <small>预览页</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 信纸管理</a></li>
+                <li class="active">信纸管理</li>
+            </ol>
+        </section>
+
+        <section class="content">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <template>
+                        <el-table ref="multipleTable" :data="tableList" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange" >
+                            <el-table-column type="selection" width="55"></el-table-column>
+                            <el-table-column prop="url" label="url" show-overflow-tooltip ></el-table-column>
+                            <el-table-column fixed="right" label="操作" width="200">
+                                <template scope="scope">
+                                    <el-button type="text" size="small" @click="deleteImg(scope.$index, scope.row)">删除</el-button>
+                                    <el-button type="text" size="small" @click="preview(scope.$index, scope.row)">图片预览</el-button>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                    </template>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <template>
+                        <div class="fl">
+                            <el-button @click="add();">新增</el-button>
+                            <el-button type="primary" @click="batchDelete();">批量删除</el-button>
+                        </div>
+                        <div class="fr">
+                            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage"
+                                           :page-sizes="[10, 20, 50, 100]"
+                                           :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="total">
+                            </el-pagination>
+                        </div>
+
+                    </template>
+                </div>
+            </div>
+
+        </section>
+
+
+        <el-dialog title="信纸预览" :visible.sync="dialogTableVisible" :before-close="handleClose">
+            <div style="text-align:center">
+                <img :src="bgImagesSrc" alt="" width="200px" height="180px">
+            </div>
+        </el-dialog>
+
+        <el-dialog title="新增信纸" :visible.sync="dialogImageAdd" :before-close="addImagesClose">
+            <el-upload action="/manage/bgImages/uploadImages" list-type="picture-card" :on-success="uploadSuccess"
+                       :on-remove="removeUploadImages">
+                <i class="el-icon-plus"></i>
+            </el-upload>
+
+
+            <el-dialog v-model="dialogVisible" size="tiny">
+                <img width="100%" :src="dialogImageUrl" alt>
+            </el-dialog>
+        </el-dialog>
+    </div>
+</body>
+<script type='text/javascript' src="/assets/elementUI/index.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    var v=new Vue({
+        el:'#app',
+        data:{
+            multipleSelection:'', //勾选值
+            tableList:'',
+            dialogTableVisible:false,
+            bgImagesSrc:'',
+            currentPage:0,
+            pageSize:0,
+            total:0,
+
+            dialogImageAdd:false,
+            dialogVisible:'',
+            dialogImageUrl:''
+
+        },
+        methods:{
+            deleteImg:function(index,info){
+
+            } ,
+            preview:function (index,info){
+                this.dialogTableVisible=true;
+                this.bgImagesSrc=info.url;
+            },
+            //勾选情况
+            handleSelectionChange:function(val){
+                //设置勾选情况
+                this.multipleSelection = val;
+            },
+            //关闭窗口
+            handleClose:function(){
+                this.bgImagesSrc='';
+                this.dialogTableVisible=false;
+            },
+            addImagesClose:function () {
+                this.dialogImageAdd=false;
+                //获取新列别和分页
+                queryByPage("create_time desc",1,10);
+            },
+            handleSizeChange:function (val) {
+                queryByPage("create_time desc",1,val);
+            },
+            handleCurrentChange:function (val) {
+                queryByPage("create_time desc",val,this.pageSize);
+            },
+            add:function () {
+                this.dialogImageAdd=true;
+            },
+            batchDelete:function () {
+                
+            },
+            //图片上传成功钩子
+            uploadSuccess:function(response, file, fileList){
+                console.log(response);
+                console.log(file);
+                console.log(fileList);
+                return;
+                if(response.result=="0"){
+                    //上传错误，删除图片
+                    fileList.pop();
+                }
+//                fileList.splice(0,1);
+            },
+            //删除选中的图片
+            removeUploadImages:function(file, fileList){
+                console.log(file);
+                console.log(fileList);
+                return;
+                //异步删除指定的图片
+                this.$http.post(
+                    '/manage/bgImages/deleteImages',
+                    {
+                        name:file.response.msg
+                    }
+                ).then();
+            }
+
+        }
+    });
+
+    queryByPage("create_time desc",1,10);
+
+    function queryByPage(sort,currentPage,pageSize) {
+        v.$http.post(
+            '/manage/images/queryBgImagesByPage',
+            {
+                sort:sort,
+                currentPage:currentPage,
+                pageSize:pageSize
+            }
+        ).then(
+            function (response) {
+                console.log(response);
+                v.tableList=response.data.list;
+                v.total=response.data.total;
+                v.pageSize=response.data.pageSize;
+                v.currentPage=response.data.pageNum;
+            }
+        );
+        
+    }
+
+
+</script>
+</html>

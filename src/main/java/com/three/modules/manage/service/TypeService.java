@@ -20,4 +20,6 @@ public interface TypeService {
     void update(Type type);
 
     void addReturnId(Type type);
+
+    List<Type> queryTypeOfArticles();
 }

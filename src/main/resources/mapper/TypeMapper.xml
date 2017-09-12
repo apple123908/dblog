@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.three.modules.manage.dao.TypeMapper">
+    <resultMap id="typeOfArticleBean" type="com.three.modules.manage.domain.Type">
+        <id property="id" column="id"/>
+        <result property="name" column="name" />
+        <collection property="articles" ofType="com.three.modules.manage.domain.Article">
+            <id property="id" column="aId"/>
+            <result property="title" column="aTitle" />
+            <result property="createTime" column="aCreateTime" />
+        </collection>
+    </resultMap>
+
     <select id="queryAll" resultType="type">
         select * from t_type
     </select>
@@ -22,5 +32,9 @@
     <insert id="addReturnId" parameterType="com.three.modules.manage.domain.Type" useGeneratedKeys="true" keyProperty="id">
         insert into t_type(name) values(#{name})
     </insert>
+
+    <select id="queryTypeOfArticles" resultMap="typeOfArticleBean">
+        select t.*,a.id as aId,a.title as aTitle,a.create_time as aCreateTime from t_type t left join t_article a on t.id=a.type_id
+    </select>
 
 </mapper>

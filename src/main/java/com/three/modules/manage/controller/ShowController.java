@@ -4,12 +4,16 @@ import com.three.common.util.HtmlUtil;
 import com.three.common.util.JsonUtil;
 import com.three.modules.manage.domain.Article;
 import com.three.modules.manage.domain.Friends;
+import com.three.modules.manage.domain.Type;
 import com.three.modules.manage.service.ArticleService;
 import com.three.modules.manage.service.FriendsService;
+import com.three.modules.manage.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -26,6 +30,9 @@ public class ShowController {
 
     @Autowired
     FriendsService friendsService;
+
+    @Autowired
+    TypeService typeService;
 
     /**
      * 主页
@@ -66,4 +73,31 @@ public class ShowController {
         model.addAttribute("allArticle",list);
         return "modules/sys/show/allArticlelist";
     }
+
+    /**
+     * 查询所有类别下文章的信息
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/showTypeList")
+    public String showTypeList(Model model){
+        List<Type> list=typeService.queryTypeOfArticles();
+        String result=JsonUtil.object2String(list);
+        model.addAttribute("typeOfArticles",result);
+        return "modules/sys/show/typeShow";
+    }
+
+    @RequestMapping(value = "/specifiedArticle/{articleId}",method = RequestMethod.GET)
+    public String specifiedArticle(@PathVariable Integer articleId, Model model){
+        //单片文章内容信息
+
+        //最新的5篇文章的标题
+
+        //点击最高的排行榜文章
+
+        //查询出上一篇文章和下一篇文章（按照时间）
+        return null;
+    }
+
+
 }

@@ -13,4 +13,6 @@ import java.util.Map;
 public interface TypeMapper<Type> extends BaseMapper<Type> {
 
     List<Map<String, Object>> queryArticleOfTypeAmount();
+
+    List<Type> queryTypeOfArticles();
 }

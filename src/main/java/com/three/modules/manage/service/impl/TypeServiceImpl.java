@@ -49,4 +49,9 @@ public class TypeServiceImpl implements TypeService {
     public void addReturnId(Type type) {
         typeMapper.addReturnId(type);
     }
+
+    @Override
+    public List<Type> queryTypeOfArticles() {
+        return typeMapper.queryTypeOfArticles();
+    }
 }

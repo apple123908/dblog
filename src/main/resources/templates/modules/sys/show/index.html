@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>牵狗狗逛街</title>
+    <meta name="keywords" content="个人博客" />
+    <meta name="description" content="个人博客" />
+    <link href="/assets/show/css/base.css" rel="stylesheet">
+    <link href="/assets/show/css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/assets/show/js/modernizr.js"></script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div id="logo"><a href="/"></a></div>
+    <nav class="topnav" id="topnav">
+        <a href="/show/index">
+            <span>首页</span>
+            <span class="en">home</span>
+        </a>
+        <a href="/show/allArticles">
+            <span>文章</span>
+            <span class="en">article</span>
+        </a>
+        <a href="/show/showTypeList">
+            <span>分类</span>
+            <span class="en">categories</span>
+        </a>
+        <a href="#">
+            <span>标签</span>
+            <span class="en">Doing</span>
+        </a>
+        <a href="#">
+            <span>about</span>
+            <span class="en">about</span>
+        </a>
+    </nav>
+</header>
+
+<div id="app">
+    <article>
+        <h2 class="title_tj">
+            <p><span>近期</span>文章</p>
+        </h2>
+
+        <div class="bloglist left">
+            <div class="" v-for="item in articles">
+                <h3>{{item.title}}</h3>
+                <figure><img src="/assets/show/images/001.png"></figure>
+                <ul>
+                    <p v-html="item.content"></p>
+                    <a title="/" :href="'/show/specifiedArticle/'+item.id" target="_blank" class="readmore">阅读全文>></a>
+                </ul>
+                <p class="dateview"><span>{{item.createTime}}</span><span>分类：[<a :href="'/show/showTypeList/#'+item.type.id">{{item.type.name}}</a>]</span></p>
+            </div>
+        </div>
+
+
+        <aside class="right">
+            <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+            <div class="news">
+
+                <h3 class="links" >
+                    <p>友情<span>链接</span></p>
+                </h3>
+                <ul class="website" >
+                    <li v-for="item in allFriendJson"><a :href="item.url" target="view_window">{{item.name}}</a></li>
+                </ul>
+            </div>
+            <!-- Baidu Button BEGIN -->
+            <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+
+
+        </aside>
+    </article>
+</div>
+<footer>
+</footer>
+<script src="/assets/show/js/silder.js"></script>
+<script type="text/javascript" src="/assets/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/vue/vue.min.js"></script>
+<script type="text/javascript" src="/assets/vue/vue-resource.js"></script>
+<script type='text/javascript' th:inline="javascript">
+    var articles=eval("("+[[${articles}]]+")");
+    var v = new Vue({
+        el:'#app',
+        data:{
+            articles:articles,
+            allFriendJson:[[${allFriendJson}]]
+        },
+        methods:{
+
+        }
+    });
+</script>
+</body>
+</html>

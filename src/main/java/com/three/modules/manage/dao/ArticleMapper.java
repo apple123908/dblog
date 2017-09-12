@@ -22,4 +22,9 @@ public interface ArticleMapper extends BaseMapper<Article>{
 
 
     void deleteMiddle(Integer id);
+
+    List<Article> queryLast5ArticleIncludeImageType();
+
+    //全部包含type
+    List<Article> queryAllIncludeType();
 }

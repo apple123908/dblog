@@ -96,4 +96,19 @@ public class ArticleServiceImpl implements ArticleService {
             //再次新增
         articleMapper.addMiddle(list);
     }
+
+    /**
+     * 最新五篇，详细除了label，user
+     * @return
+     */
+    @Override
+    public List<Article> queryLast5ArticleIncludeImageType() {
+
+        return articleMapper.queryLast5ArticleIncludeImageType();
+    }
+
+    @Override
+    public List<Article> queryAllIncludeType() {
+        return articleMapper.queryAllIncludeType();
+    }
 }

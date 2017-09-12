@@ -25,4 +25,9 @@ public interface ArticleService {
     Article queryById(int articleId);
 
     void edit(Article article);
+
+    List<Article> queryLast5ArticleIncludeImageType();
+
+    //全部包含type
+    List<Article> queryAllIncludeType();
 }

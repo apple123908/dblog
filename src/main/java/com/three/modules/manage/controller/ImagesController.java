@@ -2,6 +2,7 @@ package com.three.modules.manage.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.three.common.annotation.LogAction;
+import com.three.common.domain.R;
 import com.three.common.domain.base.Page;
 import com.three.common.exception.CustomException;
 import com.three.common.util.JsonUtil;
@@ -22,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by three on 2017/9/8.
@@ -106,8 +108,63 @@ public class ImagesController {
         return String.format("<script>window.parent.CKEDITOR.tools.callFunction(%s, '%s')</script>", funcNumber, returnImageURL);
     }
 
+    /*@RequestMapping(value = "/upload")
+    public String upload(){
+       return  "modules/sys/manage/upload";
+    }*/
 
 
+    /**
+     * 新增，上传图片
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/uploadImages")
+    public R addImage(@RequestParam("file") MultipartFile file){
+        String nowTime=new Date().getTime()+"";
+        try {
+            imagesService.addImage(file,nowTime);
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            return R.error(e.getMessage());
+        } catch (CustomException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            return R.error(e.getMessage());
+        }
+        return R.ok(nowTime);
+    }
 
+    /**
+     * 根据文件name(其实是时间戳)删除图片信息
+     * @param bgImages
+     * @return
+     */
+    @RequestMapping(value = "/deleteByName")
+    @ResponseBody
+    public R deleteByName(@RequestBody BgImages bgImages){
+        imagesService.deleteByName(bgImages.getName());
+        return new R();
+    }
+
+    /**
+     * 根据id删除图片
+     * @param bgImages
+     * @return
+     */
+    @RequestMapping(value = "/deleteById")
+    @ResponseBody
+    public R deleteById(@RequestBody BgImages bgImages){
+        imagesService.deleteById(bgImages.getId());
+        return new R();
+    }
+
+    @RequestMapping(value = "/batchDelete")
+    @ResponseBody
+    public R batchDelete(@RequestBody List<BgImages> list){
+        imagesService.batchDelete(list);
+        return new R();
+    }
 
 }

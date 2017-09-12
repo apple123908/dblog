@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/pagination.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/upload.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/message.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/message-box.css">
     <style type="text/css">
         .fr {
             float: right;
@@ -21,6 +23,10 @@
         .fl {
             float: left;
         }
+        input.el-upload__input {
+            display: none;
+        }
+
     </style>
 </head>
 <body th:fragment="content">
@@ -42,11 +48,11 @@
                 <div class="col-xs-12">
                     <template>
                         <el-table ref="multipleTable" :data="tableList" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange" >
-                            <el-table-column type="selection" width="55"></el-table-column>
+                            <el-table-column type="selection" width="55"  :selectable="selectFun"></el-table-column>
                             <el-table-column prop="url" label="url" show-overflow-tooltip ></el-table-column>
                             <el-table-column fixed="right" label="操作" width="200">
                                 <template scope="scope">
-                                    <el-button type="text" size="small" @click="deleteImg(scope.$index, scope.row)">删除</el-button>
+                                    <el-button type="text" size="small" @click="deleteImg(scope.$index, scope.row)" :disabled="isCanDelete(scope.$index, scope.row)">删除</el-button>
                                     <el-button type="text" size="small" @click="preview(scope.$index, scope.row)">图片预览</el-button>
                                 </template>
                             </el-table-column>
@@ -85,13 +91,13 @@
         </el-dialog>
 
         <el-dialog title="新增信纸" :visible.sync="dialogImageAdd" :before-close="addImagesClose">
-            <el-upload action="/manage/bgImages/uploadImages" list-type="picture-card" :on-success="uploadSuccess"
+            <el-upload action="/manage/images/uploadImages" list-type="picture-card" :on-success="uploadSuccess"
                        :on-remove="removeUploadImages">
                 <i class="el-icon-plus"></i>
             </el-upload>
 
 
-            <el-dialog v-model="dialogVisible" size="tiny">
+            <el-dialog v-model="dialogVisible" size="tiny" v-show="false">
                 <img width="100%" :src="dialogImageUrl" alt>
             </el-dialog>
         </el-dialog>
@@ -99,6 +105,7 @@
 </body>
 <script type='text/javascript' src="/assets/elementUI/index.js"></script>
 <script type='text/javascript' th:inline="javascript">
+
     var v=new Vue({
         el:'#app',
         data:{
@@ -117,7 +124,35 @@
         },
         methods:{
             deleteImg:function(index,info){
-
+                console.log(index);
+                console.log(info);
+                this.$confirm('确定删除选中的图片?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() =>{
+                        this.$http.post(
+                            '/manage/images/deleteById',
+                            {id:info.id}
+                    ).then(
+                        function (response) {
+                            if(response.data.result==1){
+                                this.$message({
+                                    showClose: true,
+                                    message: '删除成功',
+                                    type: 'success'
+                                });
+                                queryByPage("create_time desc",1,10);
+                            }else{
+                                this.$message({
+                                    showClose: true,
+                                    message: response.data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        }
+                    );
+                });
             } ,
             preview:function (index,info){
                 this.dialogTableVisible=true;
@@ -148,14 +183,44 @@
                 this.dialogImageAdd=true;
             },
             batchDelete:function () {
-                
+                console.log(v.multipleSelection);
+                var wantRes=JSON.stringify(v.multipleSelection);//转换成json
+                console.log(wantRes);
+                this.$confirm('确定删除选中的图片?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() =>{
+                    v.$http.post(
+                    '/manage/images/batchDelete',
+                    wantRes
+                ).then(
+                    function (response) {
+                        if(response.data.result==1){
+                            this.$message({
+                                showClose: true,
+                                message: '删除成功',
+                                type: 'success'
+                            });
+                            queryByPage("create_time desc",1,10);
+                        }else{
+                            this.$message({
+                                showClose: true,
+                                message: response.data.msg,
+                                type: 'error'
+                            });
+                        }
+                    }
+                ).catch(
+                    function (response) {
+                        console.log(response);
+                    }
+                );
+            });
+
             },
             //图片上传成功钩子
             uploadSuccess:function(response, file, fileList){
-                console.log(response);
-                console.log(file);
-                console.log(fileList);
-                return;
                 if(response.result=="0"){
                     //上传错误，删除图片
                     fileList.pop();
@@ -164,17 +229,33 @@
             },
             //删除选中的图片
             removeUploadImages:function(file, fileList){
-                console.log(file);
-                console.log(fileList);
-                return;
                 //异步删除指定的图片
                 this.$http.post(
-                    '/manage/bgImages/deleteImages',
+                    '/manage/images/deleteByName',
                     {
                         name:file.response.msg
                     }
                 ).then();
+            },
+            //多选是否可以勾选
+            selectFun:function (row, index) {
+                if(row.isCite==true){
+                    return false;
+                }else{
+                    return true;
+                }
+            },
+            //单选删除是否有效
+            isCanDelete:function (index,row) {
+                if(row.isCite==true){
+                    return true;
+                }else{
+                    return false;
+                }
             }
+
+        },
+        filters:{
 
         }
     });
@@ -191,7 +272,6 @@
             }
         ).then(
             function (response) {
-                console.log(response);
                 v.tableList=response.data.list;
                 v.total=response.data.total;
                 v.pageSize=response.data.pageSize;

@@ -2,8 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.three.modules.manage.dao.ImagesMapper">
     <select id="queryAll" resultType="bgImages">
-      select * from t_bgimages
+      select b.*,a.id as isCite from t_bgimages b left join t_article a on b.id=a.bg_images_id group by b.id
     </select>
 
+    <insert id="add" parameterType="bgImages">
+        insert into t_bgimages(name,url) values(#{name},#{url})
+    </insert>
 
+    <delete id="deleteByName" parameterType="string">
+        delete from t_bgimages where name=#{name}
+    </delete>
+
+    <delete id="deleteById" parameterType="int">
+        delete from t_bgimages where id=#{id}
+    </delete>
+
+    <delete id="batchDelete" parameterType="bgImages">
+        delete from t_bgimages where id in
+        <foreach item="image" collection="list" open="(" separator="," close=")">
+            #{image.id}
+        </foreach>
+    </delete>
 </mapper>

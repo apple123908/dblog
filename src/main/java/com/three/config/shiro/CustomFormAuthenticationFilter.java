@@ -1,5 +1,6 @@
 package com.three.config.shiro;
 
+import com.three.common.util.BaseUtil;
 import com.three.common.util.Const;
 import com.three.modules.sys.domain.SysUser;
 import com.three.modules.sys.service.UserService;
@@ -16,8 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 
 /**
  * Created by three on 2017/9/4.
@@ -58,8 +61,11 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
         UsernamePasswordToken usernamePasswordToken= (UsernamePasswordToken) token;
         String username = usernamePasswordToken.getUsername();
         SysUser user = userService.findByUsername(username);
+
         //验证成功后，在session中存储用户的基本信息
         subject.getSession().setAttribute(Const.CURRENT_USER,user);
+        //更新上次ip和时间
+        userService.editLoginInfo(new SysUser(user.getId(), BaseUtil.getIpAddress((HttpServletRequest)request),new Timestamp(System.currentTimeMillis())));
         return false;
     }
 

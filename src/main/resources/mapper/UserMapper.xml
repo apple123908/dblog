@@ -5,4 +5,17 @@
     <select id="findByUsername" resultType="com.three.modules.sys.domain.SysUser" parameterType="java.lang.String">
         select * from t_user where username=#{username}
     </select>
+
+    <update id="editLoginInfo" parameterType="sysUser" >
+        update t_user
+          <set>
+              <if test="lastTime!=null">
+                 lastTime=#{lastTime,jdbcType=DATE},
+              </if>
+              <if test="lastIp!=null and lastIp!=''">
+                  lastIp=#{lastIp},
+              </if>
+          </set>
+        where id =#{id}
+    </update>
 </mapper>

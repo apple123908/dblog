@@ -11,4 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     SysUser findByUsername(String userName);
+
+    void editLoginInfo(SysUser user);
 }

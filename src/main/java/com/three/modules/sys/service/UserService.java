@@ -8,4 +8,7 @@ import com.three.modules.sys.domain.SysUser;
 public interface UserService {
 
     SysUser findByUsername(String userName);
+
+    //修改上次登陆信息（时间和ip）
+    void editLoginInfo(SysUser user);
 }

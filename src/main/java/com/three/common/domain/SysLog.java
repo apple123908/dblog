@@ -14,6 +14,7 @@ public class SysLog implements Serializable {
     private String action;//动作
     private Timestamp startTime;
     private String ip;
+    private String parameterBefore;//参数前
 
     public SysLog() {
     }
@@ -23,6 +24,14 @@ public class SysLog implements Serializable {
         this.action = action;
         this.startTime = startTime;
         this.ip = ip;
+    }
+
+    public SysLog(String operator, String action, Timestamp startTime, String ip, String parameterBefore) {
+        this.operator = operator;
+        this.action = action;
+        this.startTime = startTime;
+        this.ip = ip;
+        this.parameterBefore = parameterBefore;
     }
 
     public Integer getId() {
@@ -63,5 +72,13 @@ public class SysLog implements Serializable {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    public String getParameterBefore() {
+        return parameterBefore;
+    }
+
+    public void setParameterBefore(String parameterBefore) {
+        this.parameterBefore = parameterBefore;
     }
 }

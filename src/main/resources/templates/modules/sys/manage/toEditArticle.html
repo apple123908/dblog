@@ -92,7 +92,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         是否公开:
-                        <el-switch v-model="isPublic" on-color="#13ce66" off-color="#ff4949">
+                        <el-switch v-model="isPublic" on-color="#13ce66" off-color="#ff4949" :disabled="true">
                         </el-switch>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
             </div>
             <div class="row">
                 <div class="pull-right" style="margin:0px 50px 0px 10px;" >
-                    <el-button :plain="true" type="success" @click="submitArticle();">发布文章</el-button>
+                    <el-button :plain="true" type="success"  @click="submitArticle();">发布文章</el-button>
                 </div>
                 <div class="pull-right" style="margin:0px 10px;" >
                     <el-button :plain="true" type="info" :disabled="true" @click="saveDraft();">存为草稿</el-button>
@@ -181,10 +181,10 @@
         //内容
         $('#editor').html([[${article.content}]]);
         //图片
-        var bgInfo=[[${article.bgImages.id}]];
+        var bgInfo=[[${article.bgImages}]];
         if(bgInfo!=null&&bgInfo!=''){
-            $("#showBG").html('<img src='+[[${article.bgImages.url}]]+' width="78px" height="58px" style="border-radius: 8px;" />');
-            $("#bgImagesSelectedID").val(bgInfo);
+            $("#showBG").html('<img src='+bgInfo.url+' width="78px" height="58px" style="border-radius: 8px;" />');
+            $("#bgImagesSelectedID").val(bgInfo.id);
         }
 
         //多选

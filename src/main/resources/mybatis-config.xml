@@ -43,4 +43,5 @@
         <typeAlias alias="friends" type="com.three.modules.manage.domain.Friends"/>
     </typeAliases>
 
+
 </configuration>

@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService {
         SysUser byUsername = userMapper.findByUsername(userName);
         return byUsername;
     }
+
+    @Override
+    public void editLoginInfo(SysUser user) {
+        userMapper.editLoginInfo(user);
+    }
 }

@@ -38,8 +38,11 @@
                                         <img src="/assets/adminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                         <p>
-                                            Alexander Pierce - Web Developer
-                                            <small>Member since Nov. 2012</small>
+                                            <span>首长</span>
+                                            <br>
+                                            <span th:text="${session.currentUser.lastIp}"></span>
+                                            <br>
+                                            <small th:text="${session.currentUser.lastTime}"></small>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
@@ -60,15 +63,13 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="javascript:;" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="javascript:;" class="btn btn-default btn-flat">关于我</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="/manage/logout" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="/manage/logout" class="btn btn-default btn-flat">退出登陆</a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                                    </li>
+
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->

@@ -3,6 +3,7 @@
 <mapper namespace="com.three.common.dao.LogMapper">
 
     <insert id="addLog" parameterType="com.three.common.domain.SysLog">
-          insert into t_log(operator,action,ip) values(#{operator},#{action},#{ip,jdbcType=VARCHAR})
+          insert into t_log(operator,action,ip,parameterBefore)
+            values(#{operator},#{action},#{ip,jdbcType=VARCHAR},#{parameterBefore,jdbcType=VARCHAR})
     </insert>
 </mapper>

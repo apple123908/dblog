@@ -9,6 +9,7 @@ import com.three.modules.manage.domain.Label;
 import com.three.modules.manage.service.ArticleService;
 import com.three.modules.sys.domain.SysUser;
 import org.apache.commons.collections.map.HashedMap;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -110,5 +111,40 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> queryAllIncludeType() {
         return articleMapper.queryAllIncludeType();
+    }
+
+    @Override
+    public Article queryAllById(Integer articleId) {
+        return articleMapper.queryAllById(articleId);
+    }
+
+    @Override
+    public List<Article> queryMostArticles5() {
+        return articleMapper.queryMostArticles5();
+    }
+
+    /**
+     * 获取上下2篇
+     * @param articleId
+     * @return
+     */
+    @Override
+    public List<Article> queryNearBy(Integer articleId) {
+
+        return articleMapper.queryNearBy(articleId);
+    }
+
+    @Override
+    public void addHits(Integer articleId) {
+        articleMapper.addHits(articleId);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Integer articleId) {
+        //删除article_lable中间表信息
+        articleMapper.deleteMiddle(articleId);
+        //在删除文章
+        articleMapper.deleteById(articleId);
     }
 }

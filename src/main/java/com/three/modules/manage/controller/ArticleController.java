@@ -40,7 +40,7 @@ public class ArticleController {
 
     @RequestMapping(value = "/add")
     @ResponseBody
-    @LogAction(name="新增文章")
+    @LogAction(name="发布文章")
     public R add(@RequestBody Article article){
 
         articleService.add(article);
@@ -61,6 +61,7 @@ public class ArticleController {
      */
     @RequestMapping(value = "/queryByPage")
     @ResponseBody
+    @LogAction(name="文章管理-分页查询")
     public String queryByPage(@RequestBody Page<Article> articlePage){
         PageInfo<Article>page=articleService.queryByPage(articlePage);
         String jsonArticle = JsonUtil.object2String(page);
@@ -82,11 +83,29 @@ public class ArticleController {
         return "modules/sys/manage/toEditArticle";
     }
 
+
+    /**
+     * 修改
+     * @param article
+     * @return
+     */
     @RequestMapping(value = "/edit")
     @ResponseBody
-    public String editArticle(@RequestBody Article article){
+    @LogAction(name="修改文章")
+    public R editArticle(@RequestBody Article article){
         articleService.edit(article);
-        return null;
+        return new R();
     }
 
+    /**
+     * 删除
+     * @return
+     */
+    @RequestMapping(value = "/deleteById")
+    @ResponseBody
+    @LogAction(name="删除文章")
+    public R deleteById(@RequestBody Article article){
+        articleService.deleteById(article.getId());
+        return new R();
+    }
 }

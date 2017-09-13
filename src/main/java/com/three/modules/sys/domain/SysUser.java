@@ -1,6 +1,7 @@
 package com.three.modules.sys.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * 用户
@@ -14,6 +15,17 @@ public class SysUser implements Serializable {
 
     private String salt;
 
+    private String lastIp;
+    private Timestamp lastTime;
+
+    public SysUser() {
+    }
+
+    public SysUser(Integer id, String lastIp, Timestamp lastTime) {
+        this.id = id;
+        this.lastIp = lastIp;
+        this.lastTime = lastTime;
+    }
 
     public Integer getId() {
         return id;
@@ -45,5 +57,21 @@ public class SysUser implements Serializable {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public String getLastIp() {
+        return lastIp;
+    }
+
+    public void setLastIp(String lastIp) {
+        this.lastIp = lastIp;
+    }
+
+    public Timestamp getLastTime() {
+        return lastTime;
+    }
+
+    public void setLastTime(Timestamp lastTime) {
+        this.lastTime = lastTime;
     }
 }

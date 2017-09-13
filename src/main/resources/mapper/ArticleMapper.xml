@@ -98,7 +98,7 @@
             t.id as tId,
             t.name as tName
         from t_article a
-            inner join t_type t on a.type_id=t.id
+            left join t_type t on a.type_id=t.id
     </select>
     
     <select id="queryById" resultMap="articleEditBean" parameterType="java.lang.Integer">
@@ -159,4 +159,42 @@
         select a.*,t.id as tId,t.name as tName from t_article a left join t_type t on a.type_id=t.id order by a.create_time desc
     </select>
 
+    <select id="queryAllById" resultMap="articleAllBean" parameterType="integer">
+        select
+            a.*,
+            b.url as bUrl,
+            t.name as tName,
+            l.name as lName
+        from t_article a inner join t_user u on a.author_id=u.id
+            left join t_type t on a.type_id = t.id
+            left join t_bgimages b on a.bg_images_id=b.id
+            left join t_article_label al on a.id=al.article_id
+            left join t_label l on al.label_id=l.id
+        where a.id=#{articleId}
+    </select>
+
+    <!--访问量最高的5篇-->
+    <select id="queryMostArticles5" resultType="article">
+      select id,title,create_time from t_article order by  browse_count desc limit 0,5
+    </select>
+
+    <!--获取上下2篇-->
+    <select id="queryNearBy" resultType="article">
+        SELECT
+          id,title
+        FROM t_article
+        WHERE ID IN (
+            SELECT CASE WHEN SIGN(ID - #{id}) &gt; 0
+              THEN MIN(ID) WHEN SIGN(ID- #{id}) &lt; 0 THEN MAX(ID) END AS ID
+            FROM t_article WHERE ID &lt;&gt; #{id}
+        GROUP BY SIGN(ID - #{id}) ORDER BY SIGN(ID - #{id})) ORDER BY ID ASC
+    </select>
+
+    <update id="addHits" parameterType="integer">
+        update t_article set browse_count=browse_count+1 where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="integer">
+        delete from t_article where id=#{articleId}
+    </delete>
 </mapper>

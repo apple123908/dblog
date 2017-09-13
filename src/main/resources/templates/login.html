@@ -55,6 +55,7 @@
 
         //简单登录操作
         $("#doLogin").click(function (e) {
+            console.log("请求登陆");
 
             $.ajax({
                 type : "POST",
@@ -70,12 +71,9 @@
                     }else{
                         //错误提示
                         alert(result.message);
+                        return;
                     }
-
-                    console.log("下面结果");
-                    console.log(data);
-                    return;
-                    window.location.href='/manage/toMain';
+//                    window.location.href='/manage/toMain';
                 }
             });
         });

@@ -40,7 +40,13 @@ public class CustomShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token= (UsernamePasswordToken) authenticationToken;
         String username = token.getUsername();
-        SysUser user = userService.findByUsername(username);
+        SysUser user = null;
+        try{
+            user = userService.findByUsername(username);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         String salt=user.getSalt();
         if(user!=null){
             return new SimpleAuthenticationInfo(user,user.getPassword(), ByteSource.Util.bytes(salt), getName());

@@ -235,6 +235,12 @@
                                     }
                                 }
                                 v.typeEditDialog=false;
+                            }else{
+                                this.$notify({
+                                    title: '警告',
+                                    message: response.data.msg,
+                                    type: 'warning'
+                                });
                             }
 
                         }
@@ -347,6 +353,12 @@
                                     }
                                 }
                                 v.labelEditDialog=false;
+                            }else{
+                                this.$notify({
+                                    title: '警告',
+                                    message: response.data.msg,
+                                    type: 'warning'
+                                });
                             }
 
                         }
@@ -370,6 +382,13 @@
                             //存入
                             v.allType.push(insertInfo);
                             console.log(v.allType);
+                        }else{
+                            //记录重复
+                            this.$notify({
+                                title: '警告',
+                                message: response.data.msg,
+                                type: 'warning'
+                            });
                         }
                     }
                 );
@@ -388,6 +407,12 @@
                             //存入
                             v.allLabel.push(insertInfo);
                             console.log(v.allType);
+                        }else{
+                            this.$notify({
+                                title: '警告',
+                                message: response.data.msg,
+                                type: 'warning'
+                            });
                         }
                     }
                 );

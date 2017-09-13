@@ -69,6 +69,7 @@ public class ImagesController {
      */
     @RequestMapping(value = "/queryBgImagesByPage")
     @ResponseBody
+    @LogAction(name="信纸管理 分页查询")
     public String queryBgImagesByPage(@RequestBody Page<BgImages> page){
         PageInfo<BgImages> bgImagesPageInfo = imagesService.queryByPage(page);
         String cunrrentList = JsonUtil.object2String(bgImagesPageInfo);
@@ -120,6 +121,7 @@ public class ImagesController {
      */
     @ResponseBody
     @RequestMapping("/uploadImages")
+    @LogAction(name="新增信纸")
     public R addImage(@RequestParam("file") MultipartFile file){
         String nowTime=new Date().getTime()+"";
         try {
@@ -143,6 +145,7 @@ public class ImagesController {
      */
     @RequestMapping(value = "/deleteByName")
     @ResponseBody
+    @LogAction(name="删除信纸（在新增页面）")
     public R deleteByName(@RequestBody BgImages bgImages){
         imagesService.deleteByName(bgImages.getName());
         return new R();
@@ -155,6 +158,7 @@ public class ImagesController {
      */
     @RequestMapping(value = "/deleteById")
     @ResponseBody
+    @LogAction(name="删除信纸")
     public R deleteById(@RequestBody BgImages bgImages){
         imagesService.deleteById(bgImages.getId());
         return new R();
@@ -162,6 +166,7 @@ public class ImagesController {
 
     @RequestMapping(value = "/batchDelete")
     @ResponseBody
+    @LogAction(name="批量删除信纸")
     public R batchDelete(@RequestBody List<BgImages> list){
         imagesService.batchDelete(list);
         return new R();

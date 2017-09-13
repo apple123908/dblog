@@ -27,4 +27,15 @@ public interface ArticleMapper extends BaseMapper<Article>{
 
     //全部包含type
     List<Article> queryAllIncludeType();
+
+    Article queryAllById(Integer articleId);
+
+    //访问量最高的5篇
+    List<Article> queryMostArticles5();
+
+    //获取上下2篇
+    List<Article> queryNearBy(Integer articleId);
+
+    //增加点击量
+    void addHits(Integer articleId);
 }

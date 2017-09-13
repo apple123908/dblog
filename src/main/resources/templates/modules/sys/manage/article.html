@@ -42,7 +42,7 @@
                             </el-table-column>
                             <el-table-column fixed="right" label="操作" width="200">
                                 <template scope="scope">
-                                    <el-button type="text" size="small"  :disabled="true" @click="">预览</el-button>
+                                    <el-button type="text" size="small"  @click="openShow(scope.row)">预览</el-button>
                                     <el-button type="text" size="small"  @click="editArticle(scope.$index, scope.row);">编辑</el-button>
                                     <el-button type="text" size="small" @click="deleteArticle(scope.$index, scope.row);">删除</el-button>
                                 </template>
@@ -86,14 +86,33 @@
             editArticle:function (index,info) {
                 window.location.href="/manage/article/toEditArticle/"+info.id;
             },
-            deleteArticle:function () {
-                
+            deleteArticle:function (index,row) {
+                this.$http.post('/manage/article/deleteById',{id:row.id}).
+                    then(function (response) {
+                            if(response.data.result==1){
+                                this.$notify({
+                                    title: '信息',
+                                    message: '删除成功',
+                                    type: 'info'
+                                });
+                                getListByPage("create_time desc",v.currentPage,v.pageSize);
+                            }else{
+                                this.$notify({
+                                    title: '警告',
+                                    message: response.data.msg,
+                                    type: 'warning'
+                                });
+                            }
+                });
             },
             handleSizeChange:function (val) {
                 getListByPage("create_time desc",1,val);
             },
             handleCurrentChange:function (val) {
                 getListByPage("create_time desc",val,v.pageSize);
+            },
+            openShow:function (row) {
+                window.open("/show/specifiedArticle/"+row.id);
             }
             
         }

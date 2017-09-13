@@ -30,4 +30,17 @@ public interface ArticleService {
 
     //全部包含type
     List<Article> queryAllIncludeType();
+
+    Article queryAllById(Integer articleId);
+
+    //获取访问量最高的5篇
+    List<Article> queryMostArticles5();
+
+    //上下2片（附近）
+    List<Article> queryNearBy(Integer articleId);
+
+    //点击量+1
+    void addHits(Integer articleId);
+
+    void deleteById(Integer articleId);
 }

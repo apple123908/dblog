@@ -218,7 +218,15 @@
         ).then(
             function(response){
                 console.log(response);
-                alert("编写完成后续处理！");
+                if(response.data.result){
+                    //跳转到当前页面
+                    window.location.href="/manage/write/toWrite";
+                    this.$notify({
+                        title: '信息',
+                        message: '上传成功',
+                        type: 'info'
+                    });
+                }
             }
         );
     }

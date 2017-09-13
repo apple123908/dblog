@@ -5,6 +5,7 @@ import com.three.common.domain.SysLog;
 import com.three.common.service.LogService;
 import com.three.common.util.BaseUtil;
 import com.three.common.util.Const;
+import com.three.common.util.JsonUtil;
 import com.three.modules.sys.domain.SysUser;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -19,8 +20,12 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by three on 2017/9/2.
@@ -38,8 +43,8 @@ public class LogAspect {
 
 
     //通过上面的切点进行拦截
-    @After("annotationPointCut()")
-    public void after(JoinPoint joinpoint){
+    @Before("annotationPointCut()")
+    public void before(JoinPoint joinpoint){
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session = request.getSession();
         SysUser user = (SysUser) session.getAttribute(Const.CURRENT_USER);
@@ -52,7 +57,19 @@ public class LogAspect {
         LogAction annotation = method.getAnnotation(LogAction.class);
         String action = annotation.name();//动作
 
-        SysLog log = new SysLog(username,action,new Timestamp(System.currentTimeMillis()),ip);
+        //TODO 参数
+        Object[] args = joinpoint.getArgs();
+        int i=1;
+        Map<String,Object> map=new HashMap<String,Object>();
+        String parameterBefore=null;
+        for(Object arg : args){
+            map.put("第"+i+"个参数",JsonUtil.object2String(arg));
+        }
+        if(map.size()!=0){
+            parameterBefore=JsonUtil.object2String(map);
+        }
+
+        SysLog log = new SysLog(username,action,new Timestamp(System.currentTimeMillis()),ip,parameterBefore);
         logService.addLog(log);
     }
 

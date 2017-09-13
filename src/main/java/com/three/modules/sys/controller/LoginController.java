@@ -1,6 +1,7 @@
 package com.three.modules.sys.controller;
 
 import com.three.common.annotation.LogAction;
+import com.three.common.util.Const;
 import com.three.common.util.JsonUtil;
 import com.three.modules.manage.domain.Article;
 import com.three.modules.manage.service.ArticleService;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
@@ -31,8 +34,13 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/manage/toLogin")
-    public String toLogin(){
-        System.out.println("1");
+    public String toLogin(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        Object user = session.getAttribute(Const.CURRENT_USER);
+        if(user!=null){
+            //重定向
+            return "redirect:/manage/toMain";
+        }
         return "login";
     }
 

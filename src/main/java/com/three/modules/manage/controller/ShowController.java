@@ -89,14 +89,25 @@ public class ShowController {
 
     @RequestMapping(value = "/specifiedArticle/{articleId}",method = RequestMethod.GET)
     public String specifiedArticle(@PathVariable Integer articleId, Model model){
+        //增加访问量
+        articleService.addHits(articleId);
         //单片文章内容信息
+        Article article=articleService.queryAllById(articleId);
 
         //最新的5篇文章的标题
+        List<Article> articlesLast5 = articleService.queryLast5Article();
 
         //点击最高的排行榜文章
+        List<Article> mostHitsArticles = articleService.queryMostArticles5();
 
         //查询出上一篇文章和下一篇文章（按照时间）
-        return null;
+        List<Article> nearby = articleService.queryNearBy(articleId);
+
+        model.addAttribute("article",JsonUtil.object2String(article));
+        model.addAttribute("ultramodern",articlesLast5);
+        model.addAttribute("hits",mostHitsArticles);
+        model.addAttribute("nearby",nearby);
+        return "modules/sys/show/specifiedArticle";
     }
 
 

@@ -35,6 +35,7 @@ public class FriendsController {
 
     @RequestMapping(value = "/add")
     @ResponseBody
+    @LogAction(name="新增博友链接")
     public R add(@RequestBody Friends friends){
         friendsService.addReturnId(friends);
         Integer id = friends.getId();
@@ -48,6 +49,7 @@ public class FriendsController {
      */
     @RequestMapping(value = "/edit")
     @ResponseBody
+    @LogAction(name="修改博友链接")
     public R edit(@RequestBody Friends friends){
         friendsService.edit(friends);
         return new R();
@@ -60,6 +62,7 @@ public class FriendsController {
      */
     @RequestMapping(value = "/delete")
     @ResponseBody
+    @LogAction(name="删除博友链接")
     public R delete(@RequestBody Friends friends){
         friendsService.deleteById(friends.getId());
         return new R();

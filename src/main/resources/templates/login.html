@@ -42,7 +42,10 @@
             </form>
         </div>
     </div>
+
+
     <script th:src="@{/assets/login/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/jquery/jquery.tips.js}"></script>
     <script>
     $(function() {
 
@@ -55,8 +58,12 @@
 
         //简单登录操作
         $("#doLogin").click(function (e) {
-            console.log("请求登陆");
-
+            $("#userName").tips({
+                side : 1,
+                msg : '正在登录 , 请稍后 ...',
+                bg : '#68B500',
+                time : 3
+            });
             $.ajax({
                 type : "POST",
                 url : "/manage/toLogin",
@@ -70,7 +77,12 @@
                         window.location.href='/manage/toMain';
                     }else{
                         //错误提示
-                        alert(result.message);
+                        $("#userName").tips({
+                            side : 1,
+                            msg : result.message,
+                            bg : '#FF5080',
+                            time : 3
+                        });
                         return;
                     }
 //                    window.location.href='/manage/toMain';
@@ -78,6 +90,7 @@
             });
         });
     });
+
     </script>
 </div>
 <!-- end -->

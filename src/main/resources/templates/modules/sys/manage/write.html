@@ -27,6 +27,7 @@
             </ol>
         </section>
         <section class="content">
+            <validator name="validatorMethod">
             <div class="box box-default">
                 <div class="box-header with-border">
                     <h3 class="box-title">编写文章</h3>
@@ -42,7 +43,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>标题*</label>
-                                <input type="text" class="form-control" id="title" placeholder="请输入标题" v-model="title" />
+                                <input type="text" class="form-control" id="title" placeholder="请输入标题" v-model="title" v-validate:title="['title']"/>
                             </div>
                             <div class="form-group">
                                 <label>标签</label>
@@ -115,7 +116,7 @@
                     <el-button :plain="true" type="warning" @click="returnList();">返回列表</el-button>
                 </div>
             </div>
-
+            </validator>
         </section>
 
     </div>
@@ -140,6 +141,12 @@
             isDiscuss:false,
             title:''
         },
+        validators:{
+            title:function (val) {
+                alert("!");
+
+            }
+        },
         methods:{
             //显示信纸
             layerBgImage:function () {
@@ -162,9 +169,20 @@
             },
             //发布文章
             submitArticle:function () {
-
+                var self = this;
                 var content = CKEDITOR.instances.editor.getData();
                 var bgValue= $("#bgImagesSelectedID").val();
+
+                self.$validate(true,function () {
+                    /*如果所有条件都是false*/
+                    if(!self.$validatorMethod.invalid){
+                        alert("登录成功");
+                    }else {
+                        alert("sb");
+                    }
+                });
+                return;
+
                 subArticle(true,content,bgValue);//提交，暂不考虑草稿
             }
         }

@@ -89,6 +89,8 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
                 out.println("{result:false,message:'账号不存在'}");
             } else if ("LockedAccountException".equals(message)) {
                 out.println("{result:false,message:'账号被锁定'}");
+            } else if("AuthenticationException".equals(message)){
+                out.println("{result:false,message:'账号或密码错误'}");
             } else {
                 out.println("{result:false,message:'未知错误'}");
             }

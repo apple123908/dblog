@@ -4,7 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="modules/sys/fragments/manageModel">
 <head>
-    <title>编写</title>
+    <title>牵狗狗逛街</title>
     <link rel="stylesheet" href="/assets/elementUI/theme-default/table.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/input.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
@@ -179,7 +179,9 @@
     //设置默认值
     function setDefaultValue() {
         //内容
-        $('#editor').html([[${article.content}]]);
+       // $('#editor').html([[${article.content}]]);
+        var editor = CKEDITOR.replace("editor");
+        editor.setData([[${article.content}]]);
         //图片
         var bgInfo=[[${article.bgImages}]];
         if(bgInfo!=null&&bgInfo!=''){
@@ -248,8 +250,15 @@
             dataOp
         ).then(
             function(response){
-                console.log(response);
-                alert("编写完成后续处理！");
+                if(response.data.result){
+                    //跳转到当前页面
+                    window.location.href="/manage/write/toWrite";
+                    this.$notify({
+                        title: '信息',
+                        message: '上传成功',
+                        type: 'info'
+                    });
+                }
             }
         );
     }

@@ -37,7 +37,10 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	//添加插件
-	//config.extraPlugins = 'imagepaste';
+	config.extraPlugins = 'clipboard,lineutils,widget,dialog,codesnippet,widgetselection';
 
-	config.image_previewText=' '
+	config.image_previewText=' ';
+
+	//修改codesnippet默认主题
+    codeSnippet_theme = 'zenburn';
 };

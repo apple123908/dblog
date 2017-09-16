@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/pagination.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/message-box.css">
 </head>
 <body th:fragment="content">
     <div id="app">
@@ -87,23 +88,30 @@
                 window.location.href="/manage/article/toEditArticle/"+info.id;
             },
             deleteArticle:function (index,row) {
-                this.$http.post('/manage/article/deleteById',{id:row.id}).
+                this.$confirm('确定删除该记录?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    v.$http.post('/manage/article/deleteById',{id:row.id}).
                     then(function (response) {
-                            if(response.data.result==1){
-                                this.$notify({
-                                    title: '信息',
-                                    message: '删除成功',
-                                    type: 'info'
-                                });
-                                getListByPage("create_time desc",v.currentPage,v.pageSize);
-                            }else{
-                                this.$notify({
-                                    title: '警告',
-                                    message: response.data.msg,
-                                    type: 'warning'
-                                });
-                            }
+                        if(response.data.result==1){
+                            this.$notify({
+                                title: '信息',
+                                message: '删除成功',
+                                type: 'info'
+                            });
+                            getListByPage("create_time desc",v.currentPage,v.pageSize);
+                        }else{
+                            this.$notify({
+                                title: '警告',
+                                message: response.data.msg,
+                                type: 'warning'
+                            });
+                        }
+                    });
                 });
+
             },
             handleSizeChange:function (val) {
                 getListByPage("create_time desc",1,val);

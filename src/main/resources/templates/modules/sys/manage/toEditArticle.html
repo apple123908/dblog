@@ -125,8 +125,8 @@
 <script type='text/javascript' src="/assets/select2/js/select2.full.min.js"></script>
 <script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
 <script type='text/javascript' src="/assets/layer/layer.js"></script>
+<script th:src="@{/assets/jquery/jquery.tips.js}"></script>
 <script type='text/javascript' th:inline="javascript">
-    console.log([[${article}]]);
 
 
     $(function () {
@@ -242,8 +242,14 @@
         dataOp.labels=array;
         v.typeSelected=$("#typeSelected option:selected").val();
         dataOp.type.id=v.typeSelected;
-        console.log(v.labelSelected);
         console.log(dataOp);
+        //校验
+        var isUp=submitVerify(array);
+        if(!isUp){
+            return;
+        }
+        alert(0);
+        return;
         //提交修正
         v.$http.post(
             '/manage/article/edit',
@@ -267,8 +273,40 @@
     CKEDITOR.replace('editor',{
         filebrowserImageUploadUrl: '/manage/images/ckeditor-upload-image'
     });
-    
-    
+
+    //提交前校验
+    function submitVerify(array) {
+        var start=true;
+
+        if(v.title==''){
+            $("#title").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+        if(array==''){
+            $("#mult").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+        if(v.typeSelected==''||typeof(v.typeSelected)=="undefined"){
+            $("#typeSelected").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+        return start;
+    }
 
 </script>
 </html>

@@ -62,4 +62,10 @@ public class LoginController {
 
         return "modules/sys/manage/dashboard";
     }
+
+    @RequestMapping(value = "/manage/validateDemo")
+    public String validateDemo(){
+        return "modules/sys/manage/veeValidateDemo";
+    }
+
 }

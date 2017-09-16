@@ -27,7 +27,6 @@
             </ol>
         </section>
         <section class="content">
-            <validator name="validatorMethod">
             <div class="box box-default">
                 <div class="box-header with-border">
                     <h3 class="box-title">编写文章</h3>
@@ -43,7 +42,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>标题*</label>
-                                <input type="text" class="form-control" id="title" placeholder="请输入标题" v-model="title" v-validate:title="['title']"/>
+                                <input type="text" class="form-control" id="title" placeholder="请输入标题" v-model="title" />
                             </div>
                             <div class="form-group">
                                 <label>标签</label>
@@ -116,7 +115,6 @@
                     <el-button :plain="true" type="warning" @click="returnList();">返回列表</el-button>
                 </div>
             </div>
-            </validator>
         </section>
 
     </div>
@@ -125,6 +123,7 @@
 <script type='text/javascript' src="/assets/select2/js/select2.full.min.js"></script>
 <script type='text/javascript' src="/assets/ckeditor/ckeditor.js"></script>
 <script type='text/javascript' src="/assets/layer/layer.js"></script>
+<script th:src="@{/assets/jquery/jquery.tips.js}"></script>
 <script type='text/javascript' th:inline="javascript">
 
     $(function () {
@@ -140,12 +139,6 @@
             isPublic:true,
             isDiscuss:false,
             title:''
-        },
-        validators:{
-            title:function (val) {
-                alert("!");
-
-            }
         },
         methods:{
             //显示信纸
@@ -169,19 +162,10 @@
             },
             //发布文章
             submitArticle:function () {
-                var self = this;
                 var content = CKEDITOR.instances.editor.getData();
                 var bgValue= $("#bgImagesSelectedID").val();
 
-                self.$validate(true,function () {
-                    /*如果所有条件都是false*/
-                    if(!self.$validatorMethod.invalid){
-                        alert("登录成功");
-                    }else {
-                        alert("sb");
-                    }
-                });
-                return;
+
 
                 subArticle(true,content,bgValue);//提交，暂不考虑草稿
             }
@@ -226,16 +210,23 @@
             var objLabel={id:$(this).val()};
             array.push(objLabel);
         });
+        v.labelSelected=array;
         dataOp.labels=array;
         v.typeSelected=$("#typeSelected option:selected").val();
         dataOp.type.id=v.typeSelected;
+
+        //这里校验
+        var isSubmit = submitVerify();
+
+        if(!isSubmit){
+            return;
+        }
 
         v.$http.post(
             '/manage/article/add',
             dataOp
         ).then(
             function(response){
-                console.log(response);
                 if(response.data.result){
                     //跳转到当前页面
                     window.location.href="/manage/write/toWrite";
@@ -254,6 +245,39 @@
         filebrowserImageUploadUrl: '/manage/images/ckeditor-upload-image'
     });
     
+    //提交前校验
+    function submitVerify() {
+        var start=true;
+        if(v.title==''){
+            $("#title").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+
+        if(v.labelSelected==''){
+            $("#mult").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+        if(v.typeSelected==''||typeof(v.typeSelected)=="undefined"){
+            $("#typeSelected").tips({
+                side : 1,
+                msg : '不能为空',
+                bg : '#FF5080',
+                time : 3
+            });
+            start=false
+        }
+        return start;
+    }
     
 
 </script>

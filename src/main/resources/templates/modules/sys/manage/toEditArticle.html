@@ -242,14 +242,12 @@
         dataOp.labels=array;
         v.typeSelected=$("#typeSelected option:selected").val();
         dataOp.type.id=v.typeSelected;
-        console.log(dataOp);
         //校验
         var isUp=submitVerify(array);
         if(!isUp){
             return;
         }
-        alert(0);
-        return;
+
         //提交修正
         v.$http.post(
             '/manage/article/edit',

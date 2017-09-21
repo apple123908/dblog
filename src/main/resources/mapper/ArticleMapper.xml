@@ -136,7 +136,7 @@
               <if test="type.id !=null and type.id != ''">
                   type_id=#{type.id,jdbcType=INTEGER},
               </if>
-              <if test="bgImages.id !=null and bgImages.id != ''">
+              <if test="bgImages!=null and bgImages!= ''">
                   bg_images_id=#{bgImages.id,jdbcType=INTEGER},
               </if>
           </set>

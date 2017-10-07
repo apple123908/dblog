@@ -20,6 +20,7 @@
         <result column="title" property="title"/>
         <result column="is_publicity" property="isPublicity"/>
         <result column="is_discuss" property="isDiscuss"/>
+        <result column="accessory" property="accessory"/>
         <association property="type" javaType="com.three.modules.manage.domain.Type">
             <id column="tId" property="id"/>
         </association>
@@ -70,7 +71,7 @@
     </select>
 
     <insert id="addReturnId" useGeneratedKeys="true" keyProperty="id" parameterType="article">
-        insert into t_article(title,content,bg_images_id,type_id,author_id,status,is_publicity,is_discuss)
+        insert into t_article(title,content,bg_images_id,type_id,author_id,status,is_publicity,is_discuss,accessory)
           values(
               #{title,jdbcType=VARCHAR},
               #{content,jdbcType=VARCHAR},
@@ -79,7 +80,8 @@
               #{author.id,jdbcType=INTEGER},
               #{status,jdbcType=BIT},
               #{isPublicity,jdbcType=BIT},
-              #{isDiscuss,jdbcType=BIT}
+              #{isDiscuss,jdbcType=BIT},
+              #{accessory,jdbcType=VARCHAR}
           )
     </insert>
 
@@ -111,7 +113,8 @@
             t.id as tId,
             l.id as lID,
             b.id as bID,
-            b.url as bUrl
+            b.url as bUrl,
+            a.accessory as accessory
         from t_article a
             inner join t_user u on a.author_id=u.id
             left join t_bgimages b on a.bg_images_id=b.id
@@ -136,9 +139,9 @@
               <if test="type.id !=null and type.id != ''">
                   type_id=#{type.id,jdbcType=INTEGER},
               </if>
-              <if test="bgImages!=null and bgImages!= ''">
+
                   bg_images_id=#{bgImages.id,jdbcType=INTEGER},
-              </if>
+                  accessory=#{accessory.id,jdbcType=INTEGER},
           </set>
         where id=#{id}
     </update>

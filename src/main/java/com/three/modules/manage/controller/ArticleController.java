@@ -42,7 +42,6 @@ public class ArticleController {
     @ResponseBody
     @LogAction(name="发布文章")
     public R add(@RequestBody Article article){
-
         articleService.add(article);
         return new R();
     }

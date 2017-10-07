@@ -37,6 +37,8 @@ public class Article {
 
     private BgImages bgImages;//文章对应的信纸
 
+    private String accessory;
+
     public Integer getId() {
         return id;
     }
@@ -133,6 +135,11 @@ public class Article {
         this.bgImages = bgImages;
     }
 
+    public String getAccessory() {
+        return accessory;
+    }
 
-
+    public void setAccessory(String accessory) {
+        this.accessory = accessory;
+    }
 }

@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="/assets/elementUI/theme-default/notification.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/icon.css">
     <link rel="stylesheet" href="/assets/elementUI/theme-default/switch.css">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/upload.css">
 
+    <style>
+        input.el-upload__input {
+            display: none;
+        }
+    </style>
 </head>
 <body th:fragment="content">
     <div id="app">
@@ -106,6 +112,14 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-xs-12">
+                    <el-upload class="upload-demo" action="/manage/write/addAccessory" :on-preview="handleFilePreview" :on-success="handlerFileSuccess" :on-remove="handleFileRemove" :file-list="fileList">
+                        <el-button size="small" type="primary">附件上传</el-button>
+                        <div slot="tip" class="el-upload__tip"></div>
+                    </el-upload>
+                </div>
+            </div>
+            <div class="row">
                 <div class="pull-right" style="margin:0px 50px 0px 10px;" >
                     <el-button :plain="true" type="success"  @click="submitArticle();">发布文章</el-button>
                 </div>
@@ -142,7 +156,8 @@
             allType:[[${types}]],
             isPublic:[[${article.publicity}]],
             isDiscuss:[[${article.discuss}]],
-            title:[[${article.title}]]
+            title:[[${article.title}]],
+            fileList:[]
         },
         methods:{
             //显示信纸
@@ -172,6 +187,22 @@
             },
             isDefaultSelect:function (ob, array) {
                 return false;
+            },
+            handleFileRemove:function (file, fileList) {
+                //删除附件中其他已经上传的信息
+                v.fileList.splice(0,v.fileList.length);
+            },
+            handleFilePreview:function (file) {
+                console.log(file);
+                console.log(v.fileList);
+            },
+            //附件上传成功
+            handlerFileSuccess:function (response, file, fileList) {
+                //删除附件中其他已经上传的信息
+                fileList.splice(0,fileList.length);
+                //上传该文件信息
+                var ele={name:file.name,url:file.response.msg};
+                v.fileList.push(ele);
             }
         }
     });
@@ -189,6 +220,16 @@
             $("#bgImagesSelectedID").val(bgInfo.id);
         }
 
+        //附件内容显示
+        var accessory=[[${article.accessory}]];
+        if(accessory!=null){
+            var last=accessory.lastIndexOf("/")+1;
+            var name=accessory.substring(last);
+            //设置
+            var ele={name:name,url:name};
+            v.fileList.push(ele);
+
+        }
         //多选
         var selLabelArr=[[${article.labels}]];
         var need=[];
@@ -231,6 +272,10 @@
         };
         if(bgId==null||bgId==''){
             dataOp.bgImages=null;
+        }
+        //设置附件
+        if(v.fileList!=null&&v.fileList.length!=0){
+            dataOp.accessory=v.fileList[0].url;
         }
 
         //对2个下拉框设置参数

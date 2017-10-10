@@ -43,6 +43,7 @@
         <result column="create_time" property="createTime"/>
         <result column="status" property="status"/>
         <result column="browse_Count" property="browseCount"/>
+        <result column="accessory" property="accessory"/>
         <association property="author" javaType="com.three.modules.sys.domain.SysUser">
             <id column="uId" property="id" />
             <result column="uName" property="username" />
@@ -141,7 +142,7 @@
               </if>
 
                   bg_images_id=#{bgImages.id,jdbcType=INTEGER},
-                  accessory=#{accessory.id,jdbcType=INTEGER},
+                  accessory=#{accessory,jdbcType=VARCHAR},
           </set>
         where id=#{id}
     </update>

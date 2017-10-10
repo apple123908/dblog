@@ -9,6 +9,7 @@ import com.three.modules.manage.service.ArticleService;
 import com.three.modules.manage.service.FriendsService;
 import com.three.modules.manage.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,9 @@ public class ShowController {
 
     @Autowired
     TypeService typeService;
+
+    @Value("${qiniu.url}")
+    private String qiniuBaseUrl;
 
     /**
      * 主页
@@ -93,7 +97,9 @@ public class ShowController {
         articleService.addHits(articleId);
         //单片文章内容信息
         Article article=articleService.queryAllById(articleId);
-
+        if(article.getAccessory()!=null&&!"".equals(article.getAccessory())){
+            article.setAccessory(qiniuBaseUrl+article.getAccessory());
+        }
         //最新的5篇文章的标题
         List<Article> articlesLast5 = articleService.queryLast5Article();
 

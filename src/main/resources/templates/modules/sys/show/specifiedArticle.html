@@ -9,6 +9,7 @@
     <link href="/assets/show/css/new.css" rel="stylesheet">
     <link href="/assets/highlight/styles/zenburn.css" rel="stylesheet">
     <link href="/assets/elementUI/theme-default/tag.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/elementUI/theme-default/button.css">
     <!--[if lt IE 9]>
     <script src="/assets/show/js/modernizr.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
@@ -66,7 +67,9 @@
 
             <div class="ad"> </div>
             <div class="nextinfo">
-
+                <div v-if="article.accessory!=null">
+                    <el-button type="primary" size="mini" @click="downLoad()">下载附件</el-button>
+                </div>
                 <div v-if="nearby.length==2">
                     <div>
                         <p><a :href="'/show/specifiedArticle/'+nearby[0].id">上一篇：{{nearby[0].title}}</a></p>
@@ -142,7 +145,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script type='text/javascript' th:inline="javascript">
     var art=eval("("+[[${article}]]+")");
-
+    console.log(art.accessory);
     var v = new Vue({
         el:'#app',
         data:{
@@ -156,6 +159,9 @@
                 var arr = ["gray","primary","success", "warning","danger" ];
                 var index = Math.floor((Math.random()*arr.length));
                 return arr[index];
+            },
+            downLoad:function () {
+                window.open(v.article.accessory);
             }
         }
     });

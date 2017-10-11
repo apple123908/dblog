@@ -237,10 +237,14 @@
         }
         //设置附件
         if(v.fileList!=null&&v.fileList.length!=0){
-            dataOp.accessory=v.fileList[0].url;
-            console.log(dataOp.accessory);
+            var accessory=v.fileList[0].url;
+            if(accessory!=null&&accessory.indexOf("/")!=-1){
+                var last=accessory.lastIndexOf("/")+1;
+                accessory=accessory.substring(last);
+            }
+            dataOp.accessory=accessory;
         }
-        return;
+
         //对2个下拉框设置参数
         var array=[];
         $("#mult option:selected").each(function(){

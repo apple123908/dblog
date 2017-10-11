@@ -35,7 +35,7 @@ public class QiNiu {
     private  String url;
 
     /**
-     * 图片上传到七牛服务器
+     * 图片，附件上传到七牛服务器
      * @param ips
      * @param fileName 时间戳.图片类型后缀
      * @return

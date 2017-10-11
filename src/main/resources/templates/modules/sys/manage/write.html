@@ -186,7 +186,7 @@
             },
             handleFileRemove:function (file, fileList) {
                 //删除附件中其他已经上传的信息
-                fileList.splice(0,fileList.length);
+                v.fileList.splice(0,v.fileList.length);
             },
             handleFilePreview:function (file) {
                 console.log(file);
@@ -195,9 +195,10 @@
             //附件上传成功
             handlerFileSuccess:function (response, file, fileList) {
                 //删除附件中其他已经上传的信息
-                fileList.splice(0,fileList.length);
+                v.fileList.splice(0,v.fileList.length);
                 //上传该文件信息
                 var ele={name:file.name,url:file.response.msg};
+
                 v.fileList.push(ele);
             }
         }
@@ -237,8 +238,9 @@
         //设置附件
         if(v.fileList!=null&&v.fileList.length!=0){
             dataOp.accessory=v.fileList[0].url;
+            console.log(dataOp.accessory);
         }
-
+        return;
         //对2个下拉框设置参数
         var array=[];
         $("#mult option:selected").each(function(){

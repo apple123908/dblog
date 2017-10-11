@@ -199,7 +199,7 @@
             //附件上传成功
             handlerFileSuccess:function (response, file, fileList) {
                 //删除附件中其他已经上传的信息
-                fileList.splice(0,fileList.length);
+                v.fileList.splice(0,v.fileList.length);
                 //上传该文件信息
                 var ele={name:file.name,url:file.response.msg};
                 v.fileList.push(ele);
@@ -209,10 +209,12 @@
     setDefaultValue();
     //设置默认值
     function setDefaultValue() {
+//        console.log([[${article.content}]]);
         //内容
-       // $('#editor').html([[${article.content}]]);
-        var editor = CKEDITOR.replace("editor");
-        editor.setData([[${article.content}]]);
+        $('#editor').html([[${article.content}]]);
+        /*var editor = CKEDITOR.replace("editor");
+        editor.setData([[${article.content}]]);*/
+
         //图片
         var bgInfo=[[${article.bgImages}]];
         if(bgInfo!=null&&bgInfo!=''){
@@ -275,7 +277,13 @@
         }
         //设置附件
         if(v.fileList!=null&&v.fileList.length!=0){
-            dataOp.accessory=v.fileList[0].url;
+            //去掉前缀
+            var accessory=v.fileList[0].url;
+            if(accessory!=null&&accessory.indexOf("/")!=-1){
+                var last=accessory.lastIndexOf("/")+1;
+                accessory=accessory.substring(last);
+            }
+            dataOp.accessory=accessory;
         }
 
         //对2个下拉框设置参数

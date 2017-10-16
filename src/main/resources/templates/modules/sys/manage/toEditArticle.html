@@ -211,9 +211,11 @@
     function setDefaultValue() {
 //        console.log([[${article.content}]]);
         //内容
-        $('#editor').html([[${article.content}]]);
-        /*var editor = CKEDITOR.replace("editor");
-        editor.setData([[${article.content}]]);*/
+//        $('#editor').html([[${article.content}]]);
+        var editor = CKEDITOR.replace("editor",{
+            filebrowserImageUploadUrl: '/manage/images/ckeditor-upload-image'
+        });
+        editor.setData([[${article.content}]]);
 
         //图片
         var bgInfo=[[${article.bgImages}]];

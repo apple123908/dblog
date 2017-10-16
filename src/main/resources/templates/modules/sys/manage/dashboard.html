@@ -121,7 +121,11 @@
     </div>
 </body>
 <script type='text/javascript' th:inline="javascript">
+    console.log([[${last5}]]);
     var list=eval("("+[[${last5}]]+")");
+    console.log(list);
+    console.log(list.length);
+    console.log(typeof (list));
     new Vue({
         el:'#app',
         data:{

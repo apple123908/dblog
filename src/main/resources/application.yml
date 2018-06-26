@@ -1,13 +1,13 @@
 server:
-  port: 8060
+  port: 9090
 
 
 #数据库、连接池信息
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://119.23.221.234:3306/blog?useUnicode=true&characterEncoding=utf-8
-    username: three
+    url: jdbc:mysql://118.25.40.226:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: root
     password: jsd1406
     driverClassName: com.mysql.jdbc.Driver
     initialSize: 5

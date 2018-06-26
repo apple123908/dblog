@@ -38,33 +38,7 @@ public class ShowController {
     @Value("${qiniu.url}")
     private String qiniuBaseUrl;
 
-    /**
-     * 主页
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "/index")
-    public String toMain(Model model){
-        //最近5篇
-        List<Article> articlesLast5 = articleService.queryLast5ArticleIncludeImageType();
-        //删除html标签，并限制首页内容太多
-        for (Article a: articlesLast5){
-            String describe = HtmlUtil.getTextFromHtml(a.getContent());
-            if(describe!=null){
-                int length=describe.length()<=50?describe.length():50;
-                describe = describe.substring(0, length);
-                a.setContent(describe+"...");
-            }
-        }
 
-        //所有博友信息
-        List<Friends> friendss = friendsService.queryAll();
-
-        model.addAttribute("articles", JsonUtil.object2String(articlesLast5));
-        model.addAttribute("allFriendJson",friendss);
-
-        return "modules/sys/show/index";
-    }
 
     /**
      * 展示所有的文章，按照时间（新->旧）

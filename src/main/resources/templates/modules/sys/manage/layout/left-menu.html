@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="modules/sys/fragments/manageModel">
-    <head >
+    <head>
         <title>牵狗狗逛街</title>
     </head>
     <body>
@@ -18,7 +18,8 @@
                     <ul class="sidebar-menu" data-widget="tree" id="menus">
                         <li class="active treeview">
                             <a href="javascript:;" target="/manage/toMain">
-                                <i class="fa fa-dashboard"></i> <span>仪表盘</span>
+                                <i class="fa fa-dashboard"></i>
+                                <span>仪表盘</span>
                             </a>
                         </li>
                         <li class="treeview">
@@ -29,7 +30,8 @@
                         </li>
                         <li>
                             <a href="javascript:;" target="/manage/article/toManageArticleIndex">
-                                <i class="fa fa-th"></i> <span>文章管理</span>
+                                <i class="fa fa-th"></i>
+                                <span>文章管理</span>
 
                             </a>
                         </li>
@@ -44,26 +46,42 @@
                                 <i class="fa fa-laptop"></i>
                                 <span>其他管理</span>
                                 <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="javascript:;" target="/manage/kind/toKindIndex"><i class="fa fa-circle-o"></i> 类别/标签</a></li>
-                                <li><a href="javascript:;" target="/manage/images/toBgImagesIndex"><i class="fa fa-circle-o"></i> 信纸管理</a></li>
-                                <li><a href="javascript:;"><i class="fa fa-circle-o"></i> 评论管理</a></li>
+                                <li>
+                                    <a href="javascript:;" target="/manage/kind/toKindIndex">
+                                        <i class="fa fa-circle-o"></i>
+                                        类别/标签
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" target="/manage/images/toBgImagesIndex">
+                                        <i class="fa fa-circle-o"></i>
+                                        信纸管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="fa fa-circle-o"></i>
+                                        评论管理
+                                    </a>
+                                </li>
                             </ul>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
             </aside>
             <script type='text/javascript' th:inline="javascript">
-                $('#menus li').click(function(){//点击li加载界面
+                $('#menus li').click(function () {//点击li加载界面
                     var current = $(this),
                         target = current.find('a').attr('target'); // 找到链接a中的targer的值
-                    if(typeof(target)=='undefined'){
+                    if (typeof(target) == 'undefined') {
                         return;
                     }
-                    window.location.href=target;
+                    window.location.href = target;
                 });
             </script>
         </div>
